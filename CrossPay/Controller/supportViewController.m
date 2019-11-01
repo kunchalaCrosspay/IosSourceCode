@@ -726,7 +726,7 @@ UIView *Crs_view=[[UIView alloc]initWithFrame:CGRectMake(0, 0, self.Crs_tablview
                 
                 
                 
-                if ([COUNTRY isEqualToString:@"UNITED STATES"]||[COUNTRY isEqualToString:@"HONG KONG"]) {
+                if ([COUNTRY isEqualToString:@"UNITED STATES"]||[COUNTRY isEqualToString:@"HONG KONG"]||[COUNTRY isEqualToString:@"GHANA"]) {
                     self.crs_HistoryLabel.hidden = YES;
                     self.crs_HistoryOutlet.hidden = YES;
                     [self.crs_profileOutlet setFrame:CGRectMake(165,8,25,25)];

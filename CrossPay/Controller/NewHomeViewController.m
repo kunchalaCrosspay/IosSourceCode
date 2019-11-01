@@ -36,6 +36,10 @@
     NSString * firstName;
     NSString * mobile;
     NSString * devieCode;
+    NSMutableArray * CharityNameArray;
+    NSString * CountryCode;
+    NSString * CharityStatus;
+    
 }
 @end
 
@@ -49,8 +53,8 @@
     
     [self profileDetails];
     
-
-    devieCode = @"555";
+    CharityStatus = @"200";
+    devieCode = @"IOS";
     // Do any additional setup after loading the view.
 }
 
@@ -66,30 +70,8 @@
 
 - (IBAction)Crs_CharityAction:(id)sender {
     
-   
-   
-    
-    if (([CHarityCountry isEqualToString:@"UNITED KINGDOM"]&&[iosReview isEqualToString:@"2"])||[CHarityCountry isEqualToString:@"HONG KONG"]||[CHarityCountry isEqualToString:@"UNITED STATES"]||[CHarityCountry isEqualToString:@"GERMANY"]) {
-        
-        
-//        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-//        CharityPayViewController * viewController = [storyboard instantiateViewControllerWithIdentifier:@"CharityPayViewControllerSID"];
-//        // viewController.crs_ProfileDetails =
-//        [self.navigationController pushViewController:viewController animated:YES];
-        
-        NSURL *url = [NSURL URLWithString:UrlSTring];
+    [self CharityDetails];
 
-        if (![[UIApplication sharedApplication] openURL:url]) {
-            NSLog(@"%@%@",@"Failed to open url:",[url description]);
-        }
-      
-    }
-    else{
-        
-        UIAlertView * alert =[[UIAlertView alloc]initWithTitle:@"Crosspay" message:@"Coming Soon" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
-        
-        [alert show];
-    }
     
   
 
@@ -210,8 +192,11 @@ MyUser =[[Crs_sharedvariable sharedMySingleton ].crs_UserDetails valueForKey:@"u
                 
                 
                 
-                UrlSTring = [NSString stringWithFormat:@"https://www.crosspaymt.com/charitypay?username=%@&devicecode=%@&firstname=%@&mobile=%@&category=%@&usercountry=%@",[[[json valueForKey:@"data"] objectAtIndex:0] valueForKey:@"user_id"],devieCode,[[[json valueForKey:@"data"] objectAtIndex:0] valueForKey:@"first_name"],[[[json valueForKey:@"data"] objectAtIndex:0] valueForKey:@"mobile"],[[[json valueForKey:@"data"] objectAtIndex:0] valueForKey:@"usercategory"],[[[json valueForKey:@"data"] objectAtIndex:0] valueForKey:@"countryisocode2"]];
+                UrlSTring = [NSString stringWithFormat:@"https://www.crosspaymt.com/charitypay?username=%@&devicecode=%@&firstname=%@&mobile=%@&category=%@&usercountry=%@&isCharityAvailable=%@",[[[json valueForKey:@"data"] objectAtIndex:0] valueForKey:@"user_id"],devieCode,[[[json valueForKey:@"data"] objectAtIndex:0] valueForKey:@"first_name"],[[[json valueForKey:@"data"] objectAtIndex:0] valueForKey:@"mobile"],[[[json valueForKey:@"data"] objectAtIndex:0] valueForKey:@"usercategory"],[[[json valueForKey:@"data"] objectAtIndex:0] valueForKey:@"countryisocode2"],CharityStatus];
                 
+                
+                CountryCode = [[[json valueForKey:@"data"] objectAtIndex:0] valueForKey:@"countryisocode2"];
+                NSLog(@"my Country Code is %@",CountryCode);
                 NSLog(@"Helo My Url is %@",self->UrlSTring);
                 
                 
@@ -248,6 +233,134 @@ MyUser =[[Crs_sharedvariable sharedMySingleton ].crs_UserDetails valueForKey:@"u
     }];
     
     [postDataTask resume];
+    
+    
+    
+    
+}
+
+-(void)CharityDetails{
+    
+    
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    
+    
+    NSError *error;
+    
+    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration delegate:self delegateQueue:nil];
+    NSURL *url = [NSURL URLWithString:Crosspay_GetCharityName];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url
+                                                           cachePolicy:NSURLRequestUseProtocolCachePolicy
+                                                       timeoutInterval:60.0];
+    
+    [request addValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [request addValue:@"application/json" forHTTPHeaderField:@"Accept"];
+    
+    [request setHTTPMethod:@"POST"];
+    NSMutableDictionary * mapData=[NSMutableDictionary new];
+    
+    
+    @try {
+        //
+        
+        
+        [mapData setObject:CountryCode forKey:@"countryCode"];
+        
+    }
+    @catch (NSException * e) {
+        
+        NSLog(@" HELLO THERE Exception: %@", e);
+    }
+    @finally {
+        NSLog(@"finally");
+    }
+    NSLog(@"%@ sai Kiran Kunchala",mapData);
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    NSLog(@"%@",mapData);
+    
+    NSData *postData = [NSJSONSerialization dataWithJSONObject:mapData options:0 error:&error];
+    [request setHTTPBody:postData];
+    
+    
+    NSURLSessionDataTask *postDataTask = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
+            [[crs_sharedmethods sharedMySingleton].Ary_view_LoadingBg removeFromSuperview];
+            
+            NSLog(@"error %@",error);
+            NSLog(@"data %@",data);
+            NSMutableArray *json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+            NSLog(@"%@", json );
+            
+            NSString * Message = [json valueForKey:@"message"];
+             NSLog(@"My Message is %@",Message);
+            NSString * Status = [json valueForKey:@"status"];
+            
+            
+            if ([Status isEqualToString:@"200"]) {
+                NSURL *url = [NSURL URLWithString:UrlSTring];
+                
+                if (![[UIApplication sharedApplication] openURL:url]) {
+                    NSLog(@"%@%@",@"Failed to open url:",[url description]);
+                }
+            } else {
+                
+                
+                UIAlertView * alert =[[UIAlertView alloc]initWithTitle:@"Crosspay" message:[json valueForKey:@"message"] delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+                
+                [alert show];
+            }
+            
+            CharityNameArray = [NSMutableArray new];
+            CharityNameArray = [json valueForKey:@"data"];
+            
+            NSSortDescriptor *descriptor = [[NSSortDescriptor alloc] initWithKey:@"OrganisationName" ascending:YES];
+            
+            NSArray *sortDescriptors = [NSArray arrayWithObject:descriptor];
+            
+            // here you will get sorted array in 'sortedArray'
+            CharityNameArray= [[CharityNameArray sortedArrayUsingDescriptors:sortDescriptors] mutableCopy];
+            
+            
+            CharityNameArray = [json valueForKey:@"data"];
+            
+            
+            
+           
+            
+            if (CharityNameArray.count == 0) {
+               
+              
+            }
+            
+            else{
+                
+                
+                
+            }
+            
+        });
+        
+        
+        
+        
+    }];
+    
+    [postDataTask resume];
+    
+    
     
     
     

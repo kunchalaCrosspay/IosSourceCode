@@ -1211,7 +1211,7 @@
     //  timer = [NSTimer scheduledTimerWithTimeInterval:0.10 target:self selector:@selector(Crs_WebCallOk) userInfo:nil repeats:YES];
     
     //[self performSelector:@selector(Crs_WebCallOk) withObject:nil afterDelay:0.0];
-    if ([CHarityCountry isEqualToString:@"UNITED STATES"]||[CHarityCountry isEqualToString:@"HONG KONG"]) {
+    if ([CHarityCountry isEqualToString:@"UNITED STATES"]||[CHarityCountry isEqualToString:@"HONG KONG"]||[CHarityCountry isEqualToString:@"GHANA"]) {
         [self.view endEditing:YES];
         UIAlertView * alert =[[UIAlertView alloc]initWithTitle:@"Crosspay" message:@"Money Transfer currently not available in your location" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
         

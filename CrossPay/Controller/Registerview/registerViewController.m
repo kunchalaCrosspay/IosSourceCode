@@ -78,7 +78,7 @@
     
     self.OtpView.hidden = YES;
     
-   [ self CountryArrayk];
+  [ self CountryArrayk];
     self.crs_search.autocapitalizationType = UITextAutocapitalizationTypeAllCharacters;
     
    [self.crs_search addTarget:self action:@selector(textFieldDidChanges:) forControlEvents:UIControlEventEditingChanged];
@@ -496,57 +496,6 @@
 - (IBAction)crs_SelectCountry:(id)sender {
     
     
-    [ self CountryArrayk];
-    self.crs_search.placeholder = @"Search By country";
-     self.crs_search.text = @"";
-    if ([self.crs_Country.text isEqualToString:@"UNITED KINGDOM"]) {
-        self.crs_idNumberfield.hidden = YES;
-        self.crs_OtherCountriesIdNumber.hidden = YES;
-    }
-    
-    else if ([self.crs_Country.text isEqualToString:@"IRELAND"]){
-        
-        self.crs_idNumberfield.hidden = YES;
-        self.crs_OtherCountriesIdNumber.hidden = YES;
-        
-        
-    }
-    
-    else if ([self.crs_Country.text isEqualToString:@"SWEDEN"]){
-        
-        self.crs_idNumberfield.hidden = NO;
-      self.crs_idNumberfield.placeholder = @"National ID Number";
-         self.crs_OtherCountriesIdNumber.hidden = YES;
-        
-    }
-    
-    else if ([self.crs_Country.text isEqualToString:@"DENMARK"]){
-        
-        self.crs_idNumberfield.hidden = NO;
-           self.crs_idNumberfield.placeholder = @"CPR Number";
-         self.crs_OtherCountriesIdNumber.hidden = YES;
-        
-    }
-    else if ([self.crs_Country.text isEqualToString:@"ITALY"]){
-        
-        self.crs_idNumberfield.hidden = YES;
-        self.crs_OtherCountriesIdNumber.placeholder = @"Codice Fiscale";
-          self.crs_OtherCountriesIdNumber.hidden = NO;
-        
-    }
-    else if ([self.crs_Country.text isEqualToString:@"SPAIN"]){
-        
-        self.crs_idNumberfield.hidden = YES;
-       self.crs_OtherCountriesIdNumber.placeholder = @"NIF/NIE Number";
-        self.crs_OtherCountriesIdNumber.hidden = NO;
-        
-    }
-    else if ([self.crs_Country.text isEqualToString:@"NORWAY"]||[self.crs_Country.text isEqualToString:@"FRANCE"]||[self.crs_Country.text isEqualToString:@"GERMANY"]||[self.crs_Country.text isEqualToString:@"NETHERLANDS"]||[self.crs_Country.text isEqualToString:@"BELGIUM"]||[self.crs_Country.text isEqualToString:@"AUSTRIA"]){
-        
-        self.crs_idNumberfield.hidden = YES;
-          self.crs_OtherCountriesIdNumber.hidden = YES;
-        
-    }
     
     
     
@@ -565,162 +514,94 @@
     }
     [self.view removeGestureRecognizer:tap];
     
+   
     
-    crs_countrylist = CountryArray;
+    _crs_CountryTableViewView.transform = CGAffineTransformScale(CGAffineTransformIdentity, 0.001, 0.001);
     
+    [self.view addSubview:_crs_CountryTableViewView];
+    
+    [UIView animateWithDuration:0.3/1.5 animations:^{
+        _crs_CountryTableViewView.transform = CGAffineTransformScale(CGAffineTransformIdentity, 1.1, 1.1);
+    } completion:^(BOOL finished) {
+        [UIView animateWithDuration:0.3/2 animations:^{
+            _crs_CountryTableViewView.transform = CGAffineTransformScale(CGAffineTransformIdentity, 0.9, 0.9);
+        } completion:^(BOOL finished) {
+            [UIView animateWithDuration:0.3/2 animations:^{
+                _crs_CountryTableViewView.transform = CGAffineTransformIdentity;
+            }];
+        }];
+    }];
+    //crs_CountryList=crs_CountryList1;
+    self.crs_search.hidden = NO;
+    self.crs_search.text = @"";
+    isFiltered = NO;
+    self.crs_search.placeholder = @"Search By Country";
+    
+    self.crs_search.hidden = NO;
     NSMutableArray * Ary=[NSMutableArray new];
     
+    
+    NSSortDescriptor *descriptor = [[NSSortDescriptor alloc] initWithKey:@"country_name" ascending:YES];
+    
+    NSArray *sortDescriptors = [NSArray arrayWithObject:descriptor];
+    
+    // here you will get sorted array in 'sortedArray'
+    crs_countrylist = [[CountryArray sortedArrayUsingDescriptors:sortDescriptors] mutableCopy];
+    
+    NSLog(@"%@",crs_countrylist);
     for (int i=0; i<crs_countrylist.count; i++) {
-        
-        
-        
-        
-              
-  if ([[[crs_countrylist valueForKey:@"country_name"]objectAtIndex:i]isEqualToString:@"DENMARK"]) {
-            
-            NSMutableDictionary * dict=[NSMutableDictionary new];
-            dict =[crs_countrylist objectAtIndex:i];
-            [Ary addObject:dict];
-            self.crs_DenmarkView.hidden = NO;
-            
-        }
-        
-        
-        
-        
-        
-        
-  else if ([[[crs_countrylist valueForKey:@"country_name"]objectAtIndex:i]isEqualToString:@"FRANCE"]) {
-      
-      NSMutableDictionary * dict=[NSMutableDictionary new];
-      dict =[crs_countrylist objectAtIndex:i];
-      [Ary addObject:dict];
-      self.crs_DenmarkView.hidden = NO;
-      
-  }
-        
-        
-     else if ([[[crs_countrylist valueForKey:@"country_name"]objectAtIndex:i]isEqualToString:@"UNITED KINGDOM"]) {
-            
-            NSMutableDictionary * dict=[NSMutableDictionary new];
-            dict =[crs_countrylist objectAtIndex:i];
-            [Ary addObject:dict];
-            
-            self.crs_DenmarkView.hidden = YES;
-            
-            
-        }
-        
-        
-        
-        
-        else if ([[[crs_countrylist valueForKey:@"country_name"]objectAtIndex:i]isEqualToString:@"NORWAY"]) {
-            
-            NSMutableDictionary * dict=[NSMutableDictionary new];
-            dict =[crs_countrylist objectAtIndex:i];
-            [Ary addObject:dict];
-            self.crs_DenmarkView.hidden = YES;
-        }
-        
-        
-        
-        
-        
-        
-        else if ([[[crs_countrylist valueForKey:@"country_name"]objectAtIndex:i]isEqualToString:@"SWEDEN"]) {
+        if ([[[crs_countrylist valueForKey:@"country_status"]objectAtIndex:i]isEqualToString:@"2"]) {
             
             
             NSMutableDictionary * dict=[NSMutableDictionary new];
             dict =[crs_countrylist objectAtIndex:i];
             [Ary addObject:dict];
-            self.crs_DenmarkView.hidden = NO;
-            
         }
         
         
         
-        
-        
-        
-        else if ([[[crs_countrylist valueForKey:@"country_name"]objectAtIndex:i]isEqualToString:@"NETHERLANDS"]) {
-            
-            NSMutableDictionary * dict=[NSMutableDictionary new];
-            dict =[crs_countrylist objectAtIndex:i];
-            [Ary addObject:dict];
-            self.crs_DenmarkView.hidden = NO;
-            
-        }
-        else if ([[[crs_countrylist valueForKey:@"country_name"]objectAtIndex:i]isEqualToString:@"GERMANY"]) {
-            
-            NSMutableDictionary * dict=[NSMutableDictionary new];
-            dict =[crs_countrylist objectAtIndex:i];
-            [Ary addObject:dict];
-            self.crs_DenmarkView.hidden = NO;
-            
-        }
-        else if ([[[crs_countrylist valueForKey:@"country_name"]objectAtIndex:i]isEqualToString:@"SPAIN"]) {
-            
-            NSMutableDictionary * dict=[NSMutableDictionary new];
-            dict =[crs_countrylist objectAtIndex:i];
-            [Ary addObject:dict];
-            self.crs_DenmarkView.hidden = NO;
-            
-        }
-        
-        else if ([[[crs_countrylist valueForKey:@"country_name"]objectAtIndex:i]isEqualToString:@"ITALY"]) {
-            
-            NSMutableDictionary * dict=[NSMutableDictionary new];
-            dict =[crs_countrylist objectAtIndex:i];
-            [Ary addObject:dict];
-            self.crs_DenmarkView.hidden = NO;
-            
-        }
-        
-        else if ([[[crs_countrylist valueForKey:@"country_name"]objectAtIndex:i]isEqualToString:@"IRELAND"]) {
-            
-            NSMutableDictionary * dict=[NSMutableDictionary new];
-            dict =[crs_countrylist objectAtIndex:i];
-            [Ary addObject:dict];
-            self.crs_DenmarkView.hidden = YES;
-            
-        }
-        
-   
-        
-else if ([[[crs_countrylist valueForKey:@"country_name"]objectAtIndex:i]isEqualToString:@"UNITED STATES"]) {
-    
-    NSMutableDictionary * dict=[NSMutableDictionary new];
-    dict =[crs_countrylist objectAtIndex:i];
-    [Ary addObject:dict];
-    self.crs_DenmarkView.hidden = YES;
-    
-}
-        else if ([[[crs_countrylist valueForKey:@"country_name"]objectAtIndex:i]isEqualToString:@"BELGIUM"]) {
-            
-            NSMutableDictionary * dict=[NSMutableDictionary new];
-            dict =[crs_countrylist objectAtIndex:i];
-            [Ary addObject:dict];
-            self.crs_DenmarkView.hidden = YES;
-            
-        }
-        
-        else if ([[[crs_countrylist valueForKey:@"country_name"]objectAtIndex:i]isEqualToString:@"AUSTRIA"]) {
-            
-            NSMutableDictionary * dict=[NSMutableDictionary new];
-            dict =[crs_countrylist objectAtIndex:i];
-            [Ary addObject:dict];
-            self.crs_DenmarkView.hidden = YES;
-            
-        }
-        else if([[[crs_countrylist valueForKey:@"country_name"]objectAtIndex:i]isEqualToString:@"HONG KONG"]) {
-            
-            NSMutableDictionary * dict=[NSMutableDictionary new];
-            dict =[crs_countrylist objectAtIndex:i];
-            [Ary addObject:dict];
-            self.crs_DenmarkView.hidden = YES;
-            
-        }
     }
+    
+    
+    
+    
+    
+    
+    
+    
+    crs_countrylist =Ary;
+    NSLog(@"%@",crs_countrylist);
+    
+    
+    
+    
+    
+    
+    NationalityName =@"country";
+    self.crs_CountryTableViewView.hidden = NO;
+    self.crs_CountryView.hidden = NO;
+    [self.crs_CountryPicker reloadAllComponents];
+    [self.crs_CountryTable reloadData];
+    
+    
+    
+    
+    _crs_CountryView.hidden = NO;
+    _crs_CountryView.transform = CGAffineTransformScale(CGAffineTransformIdentity, 0.001, 0.001);
+    
+    [self.view addSubview:_crs_CountryView];
+    [self.crs_CountryTable reloadData];
+    [UIView animateWithDuration:0.3/1.5 animations:^{
+        _crs_CountryView.transform = CGAffineTransformScale(CGAffineTransformIdentity, 1.1, 1.1);
+    } completion:^(BOOL finished) {
+        [UIView animateWithDuration:0.3/2 animations:^{
+            _crs_CountryView.transform = CGAffineTransformScale(CGAffineTransformIdentity, 0.9, 0.9);
+        } completion:^(BOOL finished) {
+            [UIView animateWithDuration:0.3/2 animations:^{
+                _crs_CountryView.transform = CGAffineTransformIdentity;
+            }];
+        }];
+    }];
     
     
     
@@ -818,14 +699,14 @@ else if ([[[crs_countrylist valueForKey:@"country_name"]objectAtIndex:i]isEqualT
     
     
     
-    else if ([self.crs_Country.text isEqualToString:@"GERMANY"]||[self.crs_Country.text isEqualToString:@"FRANCE"]||[self.crs_Country.text isEqualToString:@"NETHERLANDS"]) {
+    else if ([self.crs_Country.text isEqualToString:@"GERMANY"]||[self.crs_Country.text isEqualToString:@"FRANCE"]||[self.crs_Country.text isEqualToString:@"NETHERLANDS"]||[self.crs_Country.text isEqualToString:@"GHANA"]) {
          [self.scrollForContent setContentOffset:CGPointMake(0, 0)];
         [self GermanyValidation];
     }
     
     else   {
          [self.scrollForContent setContentOffset:CGPointMake(0, 0)];
-        [self SwedenValidation];
+        [self GermanyValidation];
     }
     
    
@@ -6714,16 +6595,27 @@ else if ([self.crs_Country.text isEqualToString:@"BELGIUM"]||[self.crs_Country.t
         if (!isFiltered){
             
             self.crs_StdLabel.text = [[crs_countrylist valueForKey:@"isd_code"] objectAtIndex:indexPath.row];
+        
             self.crs_Country.text = [[crs_countrylist valueForKey:@"country_name"]objectAtIndex:indexPath.row];
             CountryPlacer = [[crs_countrylist valueForKey:@"country_code"] objectAtIndex:indexPath.row];
-             [Crs_sharedvariable sharedMySingleton].crs_RegisterCountryCode = [[crs_countrylist valueForKey:@"country_code"] objectAtIndex:indexPath.row];
+            
+            [Crs_sharedvariable sharedMySingleton].crs_RegisterCountryCode = [[crs_countrylist valueForKey:@"country_code"] objectAtIndex:indexPath.row];
+            
+             [Crs_sharedvariable sharedMySingleton].crs_SecondIsoCode = [[crs_countrylist valueForKey:@"countryisocode2"] objectAtIndex:indexPath.row];
+            
+            NSLog(@"My Second Iso code %@",[Crs_sharedvariable sharedMySingleton].crs_SecondIsoCode);
+            
             NSLog(@"My Country Code is %@", [Crs_sharedvariable sharedMySingleton].crs_RegisterCountryCode);
+            
+            
         }
         else{
             
             self.crs_StdLabel.text = [[searchArray valueForKey:@"isd_code"] objectAtIndex:indexPath.row];
             self.crs_Country.text = [[searchArray valueForKey:@"country_name"]objectAtIndex:indexPath.row];
             CountryPlacer = [[searchArray valueForKey:@"country_code"] objectAtIndex:indexPath.row];
+            
+            
         }
         
         

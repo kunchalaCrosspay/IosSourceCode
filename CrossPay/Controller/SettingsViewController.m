@@ -621,7 +621,7 @@ UIAlertView * alert =[[UIAlertView alloc]initWithTitle:@"Crosspay" message:@"Ent
                 MobileNumber = [crs_ProfileNameArray valueForKey:@"mobilewithoutcc"];
                 NSLog(@"My Number is %@",MobileNumber);
                 
-                if ([Country isEqualToString:@"UNITED STATES"]||[Country isEqualToString:@"HONG KONG"]) {
+                if ([Country isEqualToString:@"UNITED STATES"]||[Country isEqualToString:@"HONG KONG"]||[Country isEqualToString:@"GHANA"]) {
                     self.crs_HistoryLabel.hidden = YES;
                     self.crs_HistoryOutlet.hidden = YES;
                     [self.crs_ProfileOutlet setFrame:CGRectMake(165,8,25,25)];

@@ -79,6 +79,7 @@
     ///[self PostWards];
     [self GetDistricts];
     [self GetCites];
+    [self Banks];
     self.crs_VitenamView.hidden = YES;
     self.crs_EntityName.hidden = YES;
     self.crs_search.autocapitalizationType = UITextAutocapitalizationTypeAllCharacters;
@@ -142,7 +143,7 @@
     self.crs_DropImage.hidden = NO;
     
     
-    self.crs_DateOfBirthField.hidden = YES;
+    self.crs_DateOfBirthField.hidden = NO;
     
     [self.crs_Saveon.layer setBorderWidth:1.0];
     [self.crs_Saveon
@@ -157,27 +158,27 @@
     
     CountryCodeArray = [NSMutableArray new];
     Crs_Array_banklist=[NSMutableArray new];
-    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    NSURLSession *session = [NSURLSession sharedSession];
-    NSURLSessionDataTask *dataTask = [session dataTaskWithURL:[NSURL URLWithString:Crosspay_GetBank] completionHandler:^(NSData* data, NSURLResponse* response, NSError* error
-                                                                                                                         ) {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [MBProgressHUD hideHUDForView:self.view animated:YES];
-            NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-            Crs_Array_list=[NSMutableArray new];
-            Crs_Array_banklist=[json valueForKey:@"bank"];
-            
-            NSSortDescriptor *descriptor = [[NSSortDescriptor alloc] initWithKey:@"bank_name" ascending:YES];
-            
-            NSArray *sortDescriptors = [NSArray arrayWithObject:descriptor];
-            
-            // here you will get sorted array in 'sortedArray'
-            Crs_Array_banklist = [[ Crs_Array_banklist sortedArrayUsingDescriptors:sortDescriptors] mutableCopy];
-        });
-        
-    }];
-    
-    [dataTask resume];
+//    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+//    NSURLSession *session = [NSURLSession sharedSession];
+//    NSURLSessionDataTask *dataTask = [session dataTaskWithURL:[NSURL URLWithString:Crosspay_GetBank] completionHandler:^(NSData* data, NSURLResponse* response, NSError* error
+//                                                                                                                         ) {
+//        dispatch_async(dispatch_get_main_queue(), ^{
+//            [MBProgressHUD hideHUDForView:self.view animated:YES];
+//            NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+//            Crs_Array_list=[NSMutableArray new];
+//            Crs_Array_banklist=[json valueForKey:@"bank"];
+//
+//            NSSortDescriptor *descriptor = [[NSSortDescriptor alloc] initWithKey:@"bank_name" ascending:YES];
+//
+//            NSArray *sortDescriptors = [NSArray arrayWithObject:descriptor];
+//
+//            // here you will get sorted array in 'sortedArray'
+//            Crs_Array_banklist = [[ Crs_Array_banklist sortedArrayUsingDescriptors:sortDescriptors] mutableCopy];
+//        });
+//
+//    }];
+//
+//    [dataTask resume];
     
     
     //countryCode = @"INR";
@@ -347,8 +348,11 @@
             self.vietnamMaleoutlet.hidden = NO;
             self.veitnamFemaleoutlet.hidden = NO;
             self.crs_DateOfBirthField.hidden = NO;
+            self.Crs_BranchOutlet.hidden = YES;
+            self.crs_BanglaBranchLabel.hidden = YES;
+            self.crs_banglaDrop.hidden = YES;
             
-            if ([_crs_CounryField.text isEqualToString:@"PAKISTAN"]) {
+            if ([self.crs_CounryField.text isEqualToString:@"PAKISTAN"]) {
                 self.crs_DateOfBirthField.hidden = NO;
             } else {
                 self.crs_DateOfBirthField.hidden = YES;
@@ -363,6 +367,7 @@
             [self.crs_CorparateOut setSelected:YES];
             
             self.crs_EntityName.text = [self.crs_UpdateRecieverDetails valueForKey:@"first_name"];
+            self.crs_DateOfBirthField.text = [self.crs_UpdateRecieverDetails valueForKey:@"dob"];
             self.crs_MiddleNameField.hidden = YES;
             self.crs_FirstNameField.hidden = YES;
             self.crs_LastName.hidden = YES;
@@ -380,7 +385,15 @@
             self.crs_MaleLabel.hidden = YES;
             self.vietnamMaleoutlet.hidden = YES;
             self.veitnamFemaleoutlet.hidden = YES;
-            self.crs_DateOfBirthField.hidden = YES;
+            //self.crs_DateOfBirthField.hidden = NO;
+            self.Crs_BranchOutlet.hidden = YES;
+            self.crs_BanglaBranchLabel.hidden = YES;
+            self.crs_banglaDrop.hidden = YES;
+            if ([self.crs_CounryField.text isEqualToString:@"PAKISTAN"]) {
+                self.crs_DateOfBirthField.hidden = NO;
+            } else {
+                self.crs_DateOfBirthField.hidden = YES;
+            }
         }
         
         
@@ -480,6 +493,9 @@
                 [self.crs_IbanClick setSelected:NO];
                 _Crs_CashPay_view.hidden =NO;
                 self.crs_VitenamView.hidden = YES;
+                self.Crs_BranchOutlet.hidden = YES;
+                self.crs_BanglaBranchLabel.hidden = YES;
+                self.crs_banglaDrop.hidden = YES;
                 
             }
             
@@ -505,6 +521,9 @@
                 self.crs_BranchName.hidden = NO;
                 self.crs_NepaliBranch.hidden = YES;
                 self.crs_VitenamView.hidden = YES;
+                self.Crs_BranchOutlet.hidden = YES;
+                self.crs_BanglaBranchLabel.hidden = YES;
+                self.crs_banglaDrop.hidden = YES;
             }
             
             // Branch Name
@@ -543,6 +562,9 @@
                 self.crs_Bankbuttonhider.hidden = NO;
                 self.crs_DropImage.hidden = YES;
                 self.crs_VitenamView.hidden = YES;
+                self.Crs_BranchOutlet.hidden = YES;
+                self.crs_BanglaBranchLabel.hidden = YES;
+                self.crs_banglaDrop.hidden = YES;
             }
             
             
@@ -568,6 +590,9 @@
                 self.crs_Bankbuttonhider.hidden = NO;
                 self.crs_BranchName.hidden = NO;
                 self.crs_VitenamView.hidden = YES;
+                self.Crs_BranchOutlet.hidden = YES;
+                self.crs_BanglaBranchLabel.hidden = YES;
+                self.crs_banglaDrop.hidden = YES;
             }
             
             // Branch Name
@@ -595,7 +620,9 @@
                 [self.crs_IbanClick setSelected:NO];
                 _Crs_CashPay_view.hidden =NO;
                 self.crs_VitenamView.hidden = YES;
-                
+                self.Crs_BranchOutlet.hidden = YES;
+                self.crs_BanglaBranchLabel.hidden = YES;
+                self.crs_banglaDrop.hidden = YES;
             }
             
             
@@ -624,7 +651,9 @@
                 self.crs_BranchName.hidden = NO;
                 self.crs_VitenamView.hidden = YES;
                 
-                
+                self.Crs_BranchOutlet.hidden = YES;
+                self.crs_BanglaBranchLabel.hidden = YES;
+                self.crs_banglaDrop.hidden = YES;
                 
                 
             }
@@ -658,6 +687,9 @@
                 self.crs_Mobile.hidden  = YES;
                 self.crs_DateOfBirthField.hidden = YES;
                 self.crs_CityField.hidden = YES;
+                self.Crs_BranchOutlet.hidden = YES;
+                self.crs_BanglaBranchLabel.hidden = YES;
+                self.crs_banglaDrop.hidden = YES;
             }
             
             
@@ -698,7 +730,9 @@
                 self.crs_Mobile.hidden  = YES;
                 self.crs_DateOfBirthField.hidden = YES;
                 self.crs_CityField.hidden = YES;
-                
+                self.Crs_BranchOutlet.hidden = YES;
+                self.crs_BanglaBranchLabel.hidden = YES;
+                self.crs_banglaDrop.hidden = YES;
                 
                 
             }
@@ -724,6 +758,9 @@
                 _Crs_CashPay_view.hidden =NO;
                 self.crs_NepaliBranch.hidden = NO;
                 self.crs_Ifsc.userInteractionEnabled = NO;
+                self.Crs_BranchOutlet.hidden = YES;
+                self.crs_BanglaBranchLabel.hidden = YES;
+                self.crs_banglaDrop.hidden = YES;
             }
             
             
@@ -753,7 +790,9 @@
                 
                 self.crs_VitenamView.hidden = YES;
                 
-                
+                self.Crs_BranchOutlet.hidden = YES;
+                self.crs_BanglaBranchLabel.hidden = YES;
+                self.crs_banglaDrop.hidden = YES;
                 
                 
             }
@@ -779,6 +818,9 @@
                 _Crs_CashPay_view.hidden =NO;
                 self.crs_VitenamView.hidden = YES;
                 self.crs_BranchName.hidden = YES;
+                self.Crs_BranchOutlet.hidden = YES;
+                self.crs_BanglaBranchLabel.hidden = YES;
+                self.crs_banglaDrop.hidden = YES;
             }
             
             
@@ -807,7 +849,9 @@
                 self.crs_BankAccount.hidden = YES;
                 self.crs_NepaliBranch.hidden = YES;
                 self.crs_VitenamView.hidden = YES;
-                
+                self.Crs_BranchOutlet.hidden = YES;
+                self.crs_BanglaBranchLabel.hidden = YES;
+                self.crs_banglaDrop.hidden = YES;
             }
             
             
@@ -830,6 +874,9 @@
                 _Crs_CashPay_view.hidden =NO;
                 self.crs_VitenamView.hidden = YES;
                 self.crs_BranchName.hidden = YES;
+                self.Crs_BranchOutlet.hidden = YES;
+                self.crs_BanglaBranchLabel.hidden = YES;
+                self.crs_banglaDrop.hidden = YES;
             }
             
             
@@ -858,6 +905,9 @@
                 self.crs_BankAccount.hidden = YES;
                 self.crs_NepaliBranch.hidden = YES;
                 self.crs_VitenamView.hidden = YES;
+                self.Crs_BranchOutlet.hidden = YES;
+                self.crs_BanglaBranchLabel.hidden = YES;
+                self.crs_banglaDrop.hidden = YES;
                 
             }
             
@@ -914,6 +964,63 @@
             
             
         }
+        
+        else if ([self.crs_CounryField.text isEqualToString:@"BANGLADESH"]) {
+            
+            NSString * Accountnumber = [self.crs_UpdateRecieverDetails valueForKey:@"account_num"];
+            
+            if ([Accountnumber isEqualToString:@"null"]||[Accountnumber isEqualToString:@""]||[Accountnumber length] == 0)
+                
+            {
+                bankType = @"0";
+                kenyaBankType = @"2";
+                countryCode = @"BGT";
+                PaymentType = @"Wallet";
+                self.crs_CashPickUp.text = @"MOBILE WALLET";
+                [self.crs_BankAcountClick  setSelected:NO];
+                [self.crs_IbanClick setSelected:NO];
+                _Crs_CashPay_view.hidden =NO;
+                self.crs_VitenamView.hidden = YES;
+                self.crs_BranchName.hidden = YES;
+                self.Crs_BranchOutlet.hidden = YES;
+                self.crs_BanglaBranchLabel.hidden = YES;
+                self.crs_banglaDrop.hidden = YES;
+            }
+            
+            
+            else{
+                
+                
+                
+                
+                bankType = @"1";
+                countryCode = @"BGT";
+                PaymentType = @"ACCOUNT CREDIT";
+                self.crs_CashPickUp.text = @"MOBILE WALLET";
+                [self.crs_BankAcountClick  setSelected:YES];
+                [self.crs_IbanClick setSelected:YES];
+                _Crs_CashPay_view.hidden =YES;
+                self.crs_Ifsc.placeholder = @"";
+                self.crs_BankAccount.hidden = NO;
+                self.crs_NepalBranchNameLabel.hidden = YES;
+                self.crs_Ifsc.text= [self.crs_UpdateRecieverDetails valueForKey:@"branch_name"];
+                self.crs_SelectBranch.text=[self.crs_UpdateRecieverDetails valueForKey:@"bank_name"];
+                self.crs_BranchName.text=[self.crs_UpdateRecieverDetails valueForKey:@"account_num"];
+               
+                self.crs_DropImage.hidden = NO;
+                self.crs_DateOfBirthField.hidden = YES;
+                self.crs_BranchName.hidden = NO;
+                self.crs_BankAccount.hidden = YES;
+                self.crs_NepaliBranch.hidden = YES;
+                self.crs_VitenamView.hidden = YES;
+                self.Crs_BranchOutlet.hidden = NO;
+                self.crs_BanglaBranchLabel.hidden = NO;
+                self.crs_banglaDrop.hidden = NO;
+                self.crs_BranchName.placeholder = @"Account Number";
+            }
+            
+            
+        }
         else if ([self.crs_CounryField.text isEqualToString:@"UGANDA"]) {
             
             NSString * Accountnumber = [self.crs_UpdateRecieverDetails valueForKey:@"account_num"];
@@ -931,6 +1038,9 @@
                 _Crs_CashPay_view.hidden =NO;
                 self.crs_VitenamView.hidden = YES;
                 self.crs_BranchName.hidden = YES;
+                self.Crs_BranchOutlet.hidden = YES;
+                self.crs_BanglaBranchLabel.hidden = YES;
+                self.crs_banglaDrop.hidden = YES;
             }
             
             
@@ -959,7 +1069,9 @@
                 self.crs_BankAccount.hidden = YES;
                 self.crs_NepaliBranch.hidden = YES;
                 self.crs_VitenamView.hidden = YES;
-                
+                self.Crs_BranchOutlet.hidden = YES;
+                self.crs_BanglaBranchLabel.hidden = YES;
+                self.crs_banglaDrop.hidden = YES;
             }
             
             
@@ -981,6 +1093,9 @@
                 _Crs_CashPay_view.hidden =NO;
                 self.crs_VitenamView.hidden = YES;
                 self.crs_BranchName.hidden = YES;
+                self.Crs_BranchOutlet.hidden = YES;
+                self.crs_BanglaBranchLabel.hidden = YES;
+                self.crs_banglaDrop.hidden = YES;
             }
             
             
@@ -1009,7 +1124,9 @@
                 self.crs_BankAccount.hidden = YES;
                 self.crs_NepaliBranch.hidden = YES;
                 self.crs_VitenamView.hidden = YES;
-                
+                self.Crs_BranchOutlet.hidden = YES;
+                self.crs_BanglaBranchLabel.hidden = YES;
+                self.crs_banglaDrop.hidden = YES;
             }
             
             
@@ -1032,6 +1149,9 @@
                 _Crs_CashPay_view.hidden =NO;
                 self.crs_VitenamView.hidden = YES;
                 self.crs_BranchName.hidden = YES;
+                self.Crs_BranchOutlet.hidden = YES;
+                self.crs_BanglaBranchLabel.hidden = YES;
+                self.crs_banglaDrop.hidden = YES;
             }
             
             
@@ -1060,7 +1180,9 @@
                 self.crs_BankAccount.hidden = YES;
                 self.crs_NepaliBranch.hidden = YES;
                 self.crs_VitenamView.hidden = YES;
-                
+                self.Crs_BranchOutlet.hidden = YES;
+                self.crs_BanglaBranchLabel.hidden = YES;
+                self.crs_banglaDrop.hidden = YES;
             }
             
             
@@ -1083,6 +1205,9 @@
                 _Crs_CashPay_view.hidden =NO;
                 self.crs_VitenamView.hidden = YES;
                 self.crs_BranchName.hidden = YES;
+                self.Crs_BranchOutlet.hidden = YES;
+                self.crs_BanglaBranchLabel.hidden = YES;
+                self.crs_banglaDrop.hidden = YES;
             }
             
             
@@ -1111,6 +1236,9 @@
                 self.crs_BankAccount.hidden = YES;
                 self.crs_NepaliBranch.hidden = YES;
                 self.crs_VitenamView.hidden = YES;
+                self.Crs_BranchOutlet.hidden = YES;
+                self.crs_BanglaBranchLabel.hidden = YES;
+                self.crs_banglaDrop.hidden = YES;
                 
             }
             
@@ -1129,6 +1257,9 @@
                 _Crs_CashPay_view.hidden =NO;
                 self.crs_VitenamView.hidden = YES;
                 self.crs_BranchName.hidden = YES;
+                self.Crs_BranchOutlet.hidden = YES;
+                self.crs_BanglaBranchLabel.hidden = YES;
+                self.crs_banglaDrop.hidden = YES;
             }
             
             
@@ -1155,53 +1286,14 @@
                 self.crs_BankAccount.hidden = YES;
                 self.crs_NepaliBranch.hidden = YES;
                 self.crs_VitenamView.hidden = YES;
-                
+                self.Crs_BranchOutlet.hidden = YES;
+                self.crs_BanglaBranchLabel.hidden = YES;
+                self.crs_banglaDrop.hidden = YES;
             }
             
             
         }
-        else if ([self.crs_CounryField.text isEqualToString:@"BANGLADESH"])
-        {
-            bankType = @"0";
-            kenyaBankType = @"2";
-            countryCode = @"BDT";
-            PaymentType = @"Wallet";
-            self.crs_CashPickUp.text = @"MOBILE WALLET";
-            self.crs_AccountCredit.hidden = NO ;
-            self.crs_BankAcountClick.hidden = NO;
-            self.Crs_CashPay_view.hidden = NO;
-            [_crs_Ifsc setKeyboardType:UIKeyboardTypeNumberPad];
-            [_crs_Ifsc reloadInputViews];
-            
-            self.crs_Ifsc.placeholder = @"Branch Name";
-            self.crs_BranchName.hidden = NO;
-            self.crs_BranchName.placeholder = @"Account Number";
-            self.Crs_BranchOutlet.hidden = NO;
-            // self.crs_BranchName.placeholder = @"Account Number";
-            self.crs_NepaliBranch.hidden = YES;
-            self.crs_BankAccount.hidden = YES;
-            self.crs_Bankbuttonhider.hidden = NO;
-            //self.crs_DropDown.hidden = NO;
-            self.crs_DateOfBirthField.hidden = YES;
-            self.crs_DropImage.hidden = NO;
-            self.crs_NepalBranchNameLabel.hidden = YES;
-            //[self.crs_BankAcountClick  setSelected:NO];
-            [self.crs_BankAcountClick  setSelected:NO];
-            [self.crs_IbanClick setSelected:NO];
-            self.crs_Ifsc.userInteractionEnabled = YES;
-            self.crs_VitenamView.hidden = YES;
-            // Hiding For Vietnam
-            self.crs_MaleTouch.hidden = NO;
-            self.crs_FemaleTouch.hidden = NO;
-            self.crs_CityField.hidden = NO;
-            self.crs_Mobile.hidden = NO;
-            self.crs_DateOfBirthField.hidden = YES;
-            self.crs_MaleClick.hidden = NO;
-            self.crs_FemaleClick.hidden = NO;
-            self.crs_MaleLabel.hidden = NO;
-            self.crs_FeamaleLabel.hidden = NO;
-            
-        }
+        
         
         //        else if ([self.crs_CounryField.text isEqualToString:@"TANZANIA"]) {
         //
@@ -1288,6 +1380,9 @@
             self.crs_BranchName.hidden = NO;
             
             self.crs_VitenamView.hidden = YES;
+            self.Crs_BranchOutlet.hidden = YES;
+            self.crs_BanglaBranchLabel.hidden = YES;
+            self.crs_banglaDrop.hidden = YES;
             
         }
         else if ([self.crs_CounryField.text isEqualToString:@"GAMBIA"])
@@ -1325,6 +1420,9 @@
             self.crs_FemaleClick.hidden = NO;
             self.crs_MaleLabel.hidden = NO;
             self.crs_FeamaleLabel.hidden = NO;
+            self.Crs_BranchOutlet.hidden = YES;
+            self.crs_BanglaBranchLabel.hidden = YES;
+            self.crs_banglaDrop.hidden = YES;
             
         }
         
@@ -1358,7 +1456,9 @@
             self.crs_BankAccount.hidden = NO;
             self.crs_Bankbuttonhider.hidden = YES;
             self.crs_BranchName.hidden = NO;
-            
+            self.Crs_BranchOutlet.hidden = YES;
+            self.crs_BanglaBranchLabel.hidden = YES;
+            self.crs_banglaDrop.hidden = YES;
             
         }
         
@@ -1376,13 +1476,7 @@
                 [self.crs_BankAcountClick  setSelected:NO];
                 [self.crs_IbanClick setSelected:NO];
                 _Crs_CashPay_view.hidden =NO;
-                
-                if ([EntityType isEqualToString:@"Individual"]) {
-                    self.crs_DateOfBirthField.hidden = NO;
-                } else {
-                    self.crs_DateOfBirthField.hidden = YES;;
-                }
-                
+                self.crs_DateOfBirthField.hidden = NO;
                 
                 NSString *dateString = [self.crs_UpdateRecieverDetails valueForKey:@"dob"];
                 NSDateFormatter *format = [[NSDateFormatter alloc] init];
@@ -1392,7 +1486,7 @@
                 NSString* finalDateString = [format stringFromDate:date];
                 self.crs_DateOfBirthField.text = finalDateString;
                 
-                //self.crs_DateOfBirthField.text = [self.crs_UpdateRecieverDetails valueForKey:@"dob"];
+                self.crs_DateOfBirthField.text = [self.crs_UpdateRecieverDetails valueForKey:@"dob"];
                 self.crs_Ifsc.placeholder = @"Branch Code";
                 
             }
@@ -1425,13 +1519,8 @@
                 self.crs_Ifsc.text=[self.crs_UpdateRecieverDetails valueForKey:@"ifsc"];
                 self.crs_SelectBranch.text=[self.crs_UpdateRecieverDetails valueForKey:@"bank_name"];
                 self.crs_BankAccount.text=[self.crs_UpdateRecieverDetails valueForKey:@"account_num"];
-                
-                if ([EntityType isEqualToString:@"Individual"]) {
-                    self.crs_DateOfBirthField.hidden = NO;
-                } else {
-                    self.crs_DateOfBirthField.hidden = YES;;
-                }
-                
+                 self.crs_DateOfBirthField.hidden = NO;
+               
                 
                 //self.crs_DropImage.hidden = NO;
                 NSLog(@"USAS$$$$$$");
@@ -1454,7 +1543,9 @@
                 self.crs_DropImage.hidden = NO;
                 self.crs_BankAccount.hidden = NO;
                 self.crs_BranchName.hidden = NO;
-                
+                self.Crs_BranchOutlet.hidden = YES;
+                self.crs_BanglaBranchLabel.hidden = YES;
+                self.crs_banglaDrop.hidden = YES;
                 
             }
             
@@ -1527,7 +1618,9 @@
             self.crs_FeamaleLabel.hidden = NO;
             
             
-            
+            self.Crs_BranchOutlet.hidden = YES;
+            self.crs_BanglaBranchLabel.hidden = YES;
+            self.crs_banglaDrop.hidden = YES;
             
             
             
@@ -1602,7 +1695,9 @@
             
             
             
-            
+            self.Crs_BranchOutlet.hidden = YES;
+            self.crs_BanglaBranchLabel.hidden = YES;
+            self.crs_banglaDrop.hidden = YES;
             
             
             
@@ -1658,7 +1753,9 @@
             
             
             
-            
+            self.Crs_BranchOutlet.hidden = YES;
+            self.crs_BanglaBranchLabel.hidden = YES;
+            self.crs_banglaDrop.hidden = YES;
             
             
             
@@ -1723,7 +1820,9 @@
             self.crs_MaleLabel.hidden = NO;
             self.crs_FeamaleLabel.hidden = NO;
             
-            
+            self.Crs_BranchOutlet.hidden = YES;
+            self.crs_BanglaBranchLabel.hidden = YES;
+            self.crs_banglaDrop.hidden = YES;
             
             
             
@@ -1778,7 +1877,9 @@
             
             
             
-            
+            self.Crs_BranchOutlet.hidden = YES;
+            self.crs_BanglaBranchLabel.hidden = YES;
+            self.crs_banglaDrop.hidden = YES;
             
             
             
@@ -1940,7 +2041,7 @@
         
     }
     
-    else  if ([self.crs_CounryField.text isEqualToString:@"KENYA"]||[self.crs_CounryField.text isEqualToString:@"TANZANIA"]||[self.crs_CounryField.text isEqualToString:@"UGANDA"]||[self.crs_CounryField.text isEqualToString:@"NIGERIA"]||[self.crs_CounryField.text isEqualToString:@"RWANDA"]||[self.crs_CounryField.text isEqualToString:@"GHANA"])
+    else  if ([self.crs_CounryField.text isEqualToString:@"KENYA"]||[self.crs_CounryField.text isEqualToString:@"TANZANIA"]||[self.crs_CounryField.text isEqualToString:@"UGANDA"]||[self.crs_CounryField.text isEqualToString:@"NIGERIA"]||[self.crs_CounryField.text isEqualToString:@"RWANDA"]||[self.crs_CounryField.text isEqualToString:@"GHANA"]||[self.crs_CounryField.text isEqualToString:@"BANGLADESH"])
     {
         bankType =@"0";
         PaymentType = @"Wallet";
@@ -1990,6 +2091,12 @@
     
     
     bankType = @"1";
+    
+    
+    if ([bankType isEqualToString:@"1"]) {
+        
+    }
+    
     
     if ([self.crs_CounryField.text isEqualToString:@"INDIA"]) {
         
@@ -2086,8 +2193,19 @@
         
         
     }
+    else if ([self.crs_CounryField.text isEqualToString:@"BANGLADESH"])
+    {
+        CountryName = @"BANGLADESH";
+        self.crs_Ifsc.placeholder = @"";
+        self.crs_BranchName.placeholder = @"Account Number";;
+        self.crs_BankAccount.hidden = YES;
+        self.crs_NepalBranchNameLabel.hidden = NO;
+        
+        
+        
+    }
     
-    
+   
     
     
     
@@ -3225,7 +3343,7 @@
     
     
     
-    else   if ([self.crs_CounryField.text isEqualToString:@"PHILIPPINES"]||[self.crs_CounryField.text isEqualToString:@"NEPAL"]) {
+    else   if ([self.crs_CounryField.text isEqualToString:@"PHILIPPINES"]||[self.crs_CounryField.text isEqualToString:@"NEPAL"]||[self.crs_CounryField.text isEqualToString:@"BANGLADESH"]) {
         
         
         if ([self.crs_CounryField.text isEqualToString:@"VIETNAM"]) {
@@ -3950,6 +4068,20 @@
             
             
         }
+        
+        else if ([self.crs_CounryField.text isEqualToString:@"BANGLADESH"]) {
+            
+            [mapData setObject:self.crs_Ifsc.text forKey:@"branch_name"];
+            [mapData setObject:self.crs_SelectBranch.text forKey:@"bank_name"];
+            [mapData setObject:self.crs_BranchName.text forKey:@"account_number"];
+            [mapData setObject:crs_bankCode forKey:@"bank_code"];
+            [mapData setObject:crs_branchCode forKey:@"branch_code"];
+          [mapData setObject:@"1" forKey:@"payment_type"];
+            
+            
+            
+            
+        }
         else if ([self.crs_CounryField.text isEqualToString:@"KENYA"]||[_crs_CounryField.text isEqualToString:@"TANZANIA"]||[self.crs_CounryField.text isEqualToString:@"UGANDA"]||[self.crs_CounryField.text isEqualToString:@"GHANA"]||[self.crs_CounryField.text isEqualToString:@"NIGERIA"]||[self.crs_CounryField.text isEqualToString:@"RWANDA"]) {
             
             [mapData setObject:self.crs_Ifsc.text forKey:@"account_number"];
@@ -4085,7 +4217,14 @@
             [mapData setObject:self.crs_Ifsc.text forKey:@"ifsc"];
             [mapData setObject:self.crs_SelectBranch.text forKey:@"bank_name"];
             [mapData setObject:self.crs_BankAccount.text forKey:@"account_number"];
-            [mapData setObject:date1 forKey:@"dob"];
+            @try {
+                 [mapData setObject:date1 forKey:@"dob"];
+            } @catch (NSException *exception) {
+                NSLog(@"Exception%@",exception);
+            } @finally {
+                NSLog(@"Finally");
+            }
+           
             
             
             
@@ -4173,7 +4312,14 @@
         
         if ([self.crs_CounryField.text isEqualToString:@"PAKISTAN"]) {
             
-            [mapData setObject:date1 forKey:@"dob"];
+            @try {
+                [mapData setObject:date1 forKey:@"dob"];
+            } @catch (NSException *exception) {
+                
+            } @finally {
+                
+            }
+            
             
         }
     }
@@ -5174,6 +5320,9 @@
             self.crs_Ifsc.placeholder = @"IFSC ";
             
             self.crs_BankAccount.hidden = NO;
+            self.Crs_BranchOutlet.hidden = YES;
+            self.crs_BanglaBranchLabel.hidden = YES;
+            self.crs_banglaDrop.hidden = YES;
             
         }
         
@@ -5197,7 +5346,9 @@
             self.crs_BranchName.placeholder = @"Branch Name";
             self.crs_NepalBranchNameLabel.hidden = YES;
             self.crs_BankAccount.hidden = YES;
-            
+            self.Crs_BranchOutlet.hidden = YES;
+            self.crs_BanglaBranchLabel.hidden = YES;
+            self.crs_banglaDrop.hidden = YES;
             
         }
         
@@ -5212,14 +5363,18 @@
             self.crs_BranchName.placeholder = @"";
             self.crs_NepalBranchNameLabel.hidden = NO;
             self.crs_BankAccount.hidden = YES;
-            
+            self.Crs_BranchOutlet.hidden = YES;
+            self.crs_BanglaBranchLabel.hidden = YES;
+            self.crs_banglaDrop.hidden = YES;
             
         }
         
         else if ([self.crs_CounryField.text isEqualToString:@"SRI LANKA"]) {
             
             CountryName = @"SRI LANKA";
-            
+            self.Crs_BranchOutlet.hidden = YES;
+            self.crs_BanglaBranchLabel.hidden = YES;
+            self.crs_banglaDrop.hidden = YES;
             
             self.crs_Ifsc.placeholder = @"Branch Code ";
             self.crs_NepalBranchNameLabel.hidden = YES;
@@ -5240,7 +5395,9 @@
             self.crs_NepalBranchNameLabel.hidden = YES;
             self.crs_BankAccount.hidden = YES;
             self.crs_BankAccount.placeholder = @"Account Number";
-            
+            self.Crs_BranchOutlet.hidden = YES;
+            self.crs_BanglaBranchLabel.hidden = YES;
+            self.crs_banglaDrop.hidden = YES;
         }
         
         
@@ -5251,7 +5408,9 @@
             self.crs_Ifsc.placeholder = @"Swift Code";
             self.crs_NepalBranchNameLabel.hidden = YES;
             self.crs_BankAccount.hidden = NO;
-            
+            self.Crs_BranchOutlet.hidden = YES;
+            self.crs_BanglaBranchLabel.hidden = YES;
+            self.crs_banglaDrop.hidden = YES;
             
         }
         
@@ -5264,7 +5423,9 @@
             self.crs_NepalBranchNameLabel.hidden = YES;
             self.crs_BankAccount.hidden = NO;
             
-            
+            self.Crs_BranchOutlet.hidden = YES;
+            self.crs_BanglaBranchLabel.hidden = YES;
+            self.crs_banglaDrop.hidden = YES;
         }
         
         
@@ -5313,21 +5474,7 @@
 
 - (IBAction)Crs_Btn_Action_banklist:(id)sender {
     
-    _crs_CountrySelectorView.transform = CGAffineTransformScale(CGAffineTransformIdentity, 0.001, 0.001);
     
-    [self.view addSubview:_crs_CountrySelectorView];
-    
-    [UIView animateWithDuration:0.3/1.5 animations:^{
-        _crs_CountrySelectorView.transform = CGAffineTransformScale(CGAffineTransformIdentity, 1.1, 1.1);
-    } completion:^(BOOL finished) {
-        [UIView animateWithDuration:0.3/2 animations:^{
-            _crs_CountrySelectorView.transform = CGAffineTransformScale(CGAffineTransformIdentity, 0.9, 0.9);
-        } completion:^(BOOL finished) {
-            [UIView animateWithDuration:0.3/2 animations:^{
-                _crs_CountrySelectorView.transform = CGAffineTransformIdentity;
-            }];
-        }];
-    }];
     self.crs_search.hidden = NO;
     isFiltered = NO;
     self.crs_search.placeholder  = @"Search By Bank Name";
@@ -6500,7 +6647,9 @@
             self.crs_MaleLabel.hidden = NO;
             self.crs_FeamaleLabel.hidden = NO;
             
-            
+            self.Crs_BranchOutlet.hidden = YES;
+            self.crs_BanglaBranchLabel.hidden = YES;
+            self.crs_banglaDrop.hidden = YES;
         }
         
         
@@ -6538,7 +6687,9 @@
             self.crs_FemaleClick.hidden = NO;
             self.crs_MaleLabel.hidden = NO;
             self.crs_FeamaleLabel.hidden = NO;
-            
+            self.Crs_BranchOutlet.hidden = YES;
+            self.crs_BanglaBranchLabel.hidden = YES;
+            self.crs_banglaDrop.hidden = YES;
         }
         
         
@@ -6580,7 +6731,9 @@
             self.crs_FemaleClick.hidden = NO;
             self.crs_MaleLabel.hidden = NO;
             self.crs_FeamaleLabel.hidden = NO;
-            
+            self.Crs_BranchOutlet.hidden = YES;
+            self.crs_BanglaBranchLabel.hidden = YES;
+            self.crs_banglaDrop.hidden = YES;
         }
         else if ([self.crs_CounryField.text isEqualToString:@"KENYA"])
         {
@@ -6621,7 +6774,9 @@
             self.crs_FemaleClick.hidden = NO;
             self.crs_MaleLabel.hidden = NO;
             self.crs_FeamaleLabel.hidden = NO;
-            
+            self.Crs_BranchOutlet.hidden = YES;
+            self.crs_BanglaBranchLabel.hidden = YES;
+            self.crs_banglaDrop.hidden = YES;
         }
         else if ([self.crs_CounryField.text isEqualToString:@"BANGLADESH"])
         {
@@ -6636,7 +6791,7 @@
             [_crs_Ifsc setKeyboardType:UIKeyboardTypeNumberPad];
             [_crs_Ifsc reloadInputViews];
             
-            self.crs_Ifsc.placeholder = @"Branch Name";
+            self.crs_Ifsc.placeholder = @"";
             self.crs_BranchName.hidden = NO;
             self.crs_BranchName.placeholder = @"Account Number";
             self.Crs_BranchOutlet.hidden = NO;
@@ -6663,7 +6818,9 @@
             self.crs_FemaleClick.hidden = NO;
             self.crs_MaleLabel.hidden = NO;
             self.crs_FeamaleLabel.hidden = NO;
-            
+            self.Crs_BranchOutlet.hidden = NO;
+            self.crs_BanglaBranchLabel.hidden = NO;
+            self.crs_banglaDrop.hidden = NO;
         }
         //        else if ([self.crs_CounryField.text isEqualToString:@"ZAMBIA"])
         //        {
@@ -6745,7 +6902,9 @@
             self.crs_FemaleClick.hidden = NO;
             self.crs_MaleLabel.hidden = NO;
             self.crs_FeamaleLabel.hidden = NO;
-            
+            self.Crs_BranchOutlet.hidden = YES;
+            self.crs_BanglaBranchLabel.hidden = YES;
+            self.crs_banglaDrop.hidden = YES;
         }
         else if ([self.crs_CounryField.text isEqualToString:@"GHANA"])
         {
@@ -6786,7 +6945,9 @@
             self.crs_FemaleClick.hidden = NO;
             self.crs_MaleLabel.hidden = NO;
             self.crs_FeamaleLabel.hidden = NO;
-            
+            self.Crs_BranchOutlet.hidden = YES;
+            self.crs_BanglaBranchLabel.hidden = YES;
+            self.crs_banglaDrop.hidden = YES;
         }
         else if ([self.crs_CounryField.text isEqualToString:@"UGANDA"])
         {
@@ -6827,7 +6988,9 @@
             self.crs_FemaleClick.hidden = NO;
             self.crs_MaleLabel.hidden = NO;
             self.crs_FeamaleLabel.hidden = NO;
-            
+            self.Crs_BranchOutlet.hidden = YES;
+            self.crs_BanglaBranchLabel.hidden = YES;
+            self.crs_banglaDrop.hidden = YES;
         }
         else if ([self.crs_CounryField.text isEqualToString:@"RWANDA"])
         {
@@ -6868,7 +7031,9 @@
             self.crs_FemaleClick.hidden = NO;
             self.crs_MaleLabel.hidden = NO;
             self.crs_FeamaleLabel.hidden = NO;
-            
+            self.Crs_BranchOutlet.hidden = YES;
+            self.crs_BanglaBranchLabel.hidden = YES;
+            self.crs_banglaDrop.hidden = YES;
         }
         //        else if ([self.crs_CounryField.text isEqualToString:@"ZAMBIA"])
         //        {
@@ -6950,7 +7115,9 @@
             self.crs_FemaleClick.hidden = NO;
             self.crs_MaleLabel.hidden = NO;
             self.crs_FeamaleLabel.hidden = NO;
-            
+            self.Crs_BranchOutlet.hidden = YES;
+            self.crs_BanglaBranchLabel.hidden = YES;
+            self.crs_banglaDrop.hidden = YES;
         }
         
         //        else if ([_crs_CounryField.text isEqualToString:@"TANZANIA"])
@@ -7028,7 +7195,9 @@
             self.crs_FemaleClick.hidden = NO;
             self.crs_MaleLabel.hidden = NO;
             self.crs_FeamaleLabel.hidden = NO;
-            
+            self.Crs_BranchOutlet.hidden = YES;
+            self.crs_BanglaBranchLabel.hidden = YES;
+            self.crs_banglaDrop.hidden = YES;
         }
         
         
@@ -7065,7 +7234,9 @@
             self.crs_MaleLabel.hidden = NO;
             self.crs_FeamaleLabel.hidden = NO;
             
-            
+            self.Crs_BranchOutlet.hidden = YES;
+            self.crs_BanglaBranchLabel.hidden = YES;
+            self.crs_banglaDrop.hidden = YES;
         }
         
         
@@ -7107,7 +7278,9 @@
             self.crs_FemaleClick.hidden = NO;
             self.crs_MaleLabel.hidden = NO;
             self.crs_FeamaleLabel.hidden = NO;
-            
+            self.Crs_BranchOutlet.hidden = YES;
+            self.crs_BanglaBranchLabel.hidden = YES;
+            self.crs_banglaDrop.hidden = YES;
         }
         
         else if ([self.crs_CounryField.text isEqualToString:@"AUSTRALIA"])
@@ -7143,7 +7316,9 @@
             self.crs_FemaleClick.hidden = NO;
             self.crs_MaleLabel.hidden = NO;
             self.crs_FeamaleLabel.hidden = NO;
-            
+            self.Crs_BranchOutlet.hidden = YES;
+            self.crs_BanglaBranchLabel.hidden = YES;
+            self.crs_banglaDrop.hidden = YES;
         }
         
         
@@ -7180,7 +7355,9 @@
             self.crs_FemaleClick.hidden = NO;
             self.crs_MaleLabel.hidden = NO;
             self.crs_FeamaleLabel.hidden = NO;
-            
+            self.Crs_BranchOutlet.hidden = YES;
+            self.crs_BanglaBranchLabel.hidden = YES;
+            self.crs_banglaDrop.hidden = YES;
         }
         
         
@@ -7213,11 +7390,7 @@
             //            self.Crs_CashPay_view.hidden = YES;
             
             
-            if ([EntityType isEqualToString:@"Individual"]) {
-                self.crs_DateOfBirthField.hidden = NO;
-            } else {
-                self.crs_DateOfBirthField.hidden = YES;
-            }
+           
             self.crs_NepalBranchNameLabel.hidden = YES;
             self.crs_BranchName.placeholder = @"Branch Name";
             self.crs_Ifsc.placeholder = @"Branch Code";
@@ -7240,7 +7413,9 @@
             self.crs_MaleLabel.hidden = NO;
             self.crs_FeamaleLabel.hidden = NO;
             
-            
+            self.Crs_BranchOutlet.hidden = YES;
+            self.crs_BanglaBranchLabel.hidden = YES;
+            self.crs_banglaDrop.hidden = YES;
         }
         
         
@@ -7280,6 +7455,9 @@
             self.crs_MaleLabel.hidden = YES;
             self.crs_FeamaleLabel.hidden = YES;
             self.crs_BankAccount.hidden = YES;
+            self.Crs_BranchOutlet.hidden = YES;
+            self.crs_BanglaBranchLabel.hidden = YES;
+            self.crs_banglaDrop.hidden = YES;
         }
         
         
@@ -7324,6 +7502,9 @@
             self.crs_FemaleClick.hidden = NO;
             self.crs_MaleLabel.hidden = NO;
             self.crs_FeamaleLabel.hidden = NO;
+            self.Crs_BranchOutlet.hidden = YES;
+            self.crs_BanglaBranchLabel.hidden = YES;
+            self.crs_banglaDrop.hidden = YES;
         }
         
         else if ([self.crs_CounryField.text isEqualToString:@"ZAMBIA"]) {
@@ -7363,6 +7544,9 @@
             self.crs_FemaleClick.hidden = NO;
             self.crs_MaleLabel.hidden = NO;
             self.crs_FeamaleLabel.hidden = NO;
+            self.Crs_BranchOutlet.hidden = YES;
+            self.crs_BanglaBranchLabel.hidden = YES;
+            self.crs_banglaDrop.hidden = YES;
         }
         else if ([self.crs_CounryField.text isEqualToString:@"ZIMBABWE"]) {
             
@@ -7401,6 +7585,9 @@
             self.crs_FemaleClick.hidden = NO;
             self.crs_MaleLabel.hidden = NO;
             self.crs_FeamaleLabel.hidden = NO;
+            self.Crs_BranchOutlet.hidden = YES;
+            self.crs_BanglaBranchLabel.hidden = YES;
+            self.crs_banglaDrop.hidden = YES;
         }
         
         
@@ -7438,7 +7625,9 @@
             self.crs_MaleLabel.hidden = NO;
             self.crs_FeamaleLabel.hidden = NO;
             
-            
+            self.Crs_BranchOutlet.hidden = YES;
+            self.crs_BanglaBranchLabel.hidden = YES;
+            self.crs_banglaDrop.hidden = YES;
             
         }
         
@@ -7477,7 +7666,9 @@
             self.crs_FemaleClick.hidden = NO;
             self.crs_MaleLabel.hidden = NO;
             self.crs_FeamaleLabel.hidden = NO;
-            
+            self.Crs_BranchOutlet.hidden = YES;
+            self.crs_BanglaBranchLabel.hidden = YES;
+            self.crs_banglaDrop.hidden = YES;
         }
         
         
@@ -8550,8 +8741,13 @@
     self.crs_FirstNameField.placeholder = @"Entity Name";
     [self.crs_IndividualOut setSelected:YES];
     [self.crs_CorparateOut setSelected:YES];
-      self.crs_DateOfBirthField.hidden = YES;
     
+    
+    if ([self.crs_CounryField.text isEqualToString:@"PAKISTAN"]) {
+        self.crs_DateOfBirthField.hidden = NO;
+    } else {
+        self.crs_DateOfBirthField.hidden = YES;
+    }
 }
 
 - (IBAction)crs_Coraparate1Action:(id)sender {
@@ -8573,7 +8769,7 @@
     self.crs_MaleLabel.hidden = YES;
     self.vietnamMaleoutlet.hidden = YES;
     self.veitnamFemaleoutlet.hidden = YES;
-      self.crs_DateOfBirthField.hidden = YES;
+      self.crs_DateOfBirthField.hidden = NO;
     
     self.crs_FirstNameField.hidden = YES;
     self.crs_LastName.hidden = YES;
@@ -8582,16 +8778,21 @@
     self.crs_FirstNameField.placeholder = @"Entity Name";
     [self.crs_IndividualOut setSelected:YES];
     [self.crs_CorparateOut setSelected:YES];
+    if ([self.crs_CounryField.text isEqualToString:@"PAKISTAN"]) {
+        self.crs_DateOfBirthField.hidden = NO;
+    } else {
+        self.crs_DateOfBirthField.hidden = YES;
+    }
 }
 - (IBAction)crs_BranchAction:(id)sender {
     self.crs_BanglaBranchLabel.hidden = NO;
-    self.crs_BranchName.placeholder = @"";
+    
     NSLog(@"Helllo Iam working");
    
     
     if ([self.crs_SelectBranch.text isEqualToString:@""]) {
         
-        UIAlertView * alert =[[UIAlertView alloc]initWithTitle:@"Crosspay" message:@" Hello There" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        UIAlertView * alert =[[UIAlertView alloc]initWithTitle:@"Crosspay" message:@"Please Select Bank Name For Branches" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
         
         [alert show];
         return;
@@ -8708,6 +8909,29 @@
 }
 
 
+
+-(void)Banks
+{
+    
+    NSURLSession *session = [NSURLSession sharedSession];
+    NSURLSessionDataTask *dataTask = [session dataTaskWithURL:[NSURL URLWithString:Crosspay_GetBank] completionHandler:^(NSData* data, NSURLResponse* response, NSError* error) {
+        NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+        Crs_Array_list=[NSMutableArray new];
+        Crs_Array_banklist=[json valueForKey:@"bank"];
+        NSLog(@"%@", Crs_Array_banklist);
+        NSSortDescriptor *descriptor = [[NSSortDescriptor alloc] initWithKey:@"bank_name" ascending:YES];
+        
+        NSArray *sortDescriptors = [NSArray arrayWithObject:descriptor];
+        
+        // here you will get sorted array in 'sortedArray'
+        Crs_Array_list= [[ Crs_Array_banklist sortedArrayUsingDescriptors:sortDescriptors] mutableCopy];
+        NSLog(@"My Bank List is  %@",Crs_Array_list);
+        
+    }];
+    
+    [dataTask resume];
+    
+}
 
 
 

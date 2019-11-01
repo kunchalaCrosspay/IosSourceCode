@@ -51,6 +51,7 @@
     NSString *iosReview;
     NSString * urlString;
     NSString * deviceCode;
+    NSString * CharityStatus;
 }
 
 - (void)viewDidLoad {
@@ -61,8 +62,8 @@
     [self CheckCateogory];
     
     [self Referral];
-    deviceCode = @"555";
-    
+    deviceCode = @"IOS";
+    CharityStatus = @"200";
     self.crs_profileImage.layer.cornerRadius = self.crs_profileImage.frame.size.height/2;
     self.crs_profileImage.clipsToBounds = YES;
     self.crs_profileImage.layer.borderColor = [UIColor colorWithRed:37.0/255.0 green:163.0/255.0 blue:179.0/255.0 alpha:1.0].CGColor;
@@ -230,7 +231,7 @@
                 
                 
             }
-         
+            
             
             if ([UserCatgory isEqualToString:@""]) {
                 
@@ -253,22 +254,21 @@
             
             
             
-            else if (([Country isEqualToString:@"UNITED KINGDOM"]&&[iosReview isEqualToString:@"2"])||[Country isEqualToString:@"UNITED STATES"]||[Country isEqualToString:@"HONG KONG"]||[Country isEqualToString:@"GERMANY"]){
-              
+            else if (([Country isEqualToString:@"UNITED KINGDOM"]&&[iosReview isEqualToString:@"2"])||[Country isEqualToString:@"UNITED STATES"]||[Country isEqualToString:@"HONG KONG"]||[Country isEqualToString:@"GHANA"]||[Country isEqualToString:@"GERMANY"]){
                 
-                UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                NSURL *url = [NSURL URLWithString:urlString];
                 
-                CharityPayViewController * viewController = [storyboard instantiateViewControllerWithIdentifier:@"CharityPayViewControllerSID"];;
-                
-                [self.navigationController pushViewController:viewController animated:YES];
+                if (![[UIApplication sharedApplication] openURL:url]) {
+                    NSLog(@"%@%@",@"Failed to open url:",[url description]);
+                }
                 break;
                 
                 
             }
             
             
-            else if ([Country isEqualToString:@"SPAIN"]&&[Country isEqualToString:@"DENMARK"]&&[Country isEqualToString:@"SWEDEN"]&&[Country isEqualToString:@"ITALY"]&&[Country isEqualToString:@"IRELAND"]&&[Country isEqualToString:@"NORWAY"]&&[Country isEqualToString:@"AUSTRIA"]&&[Country isEqualToString:@"FRANCE"]&&[Country isEqualToString:@"NETHERLANDS"]&&[Country isEqualToString:@"BELGIUM"]&&[Country isEqualToString:@"GERMANY"]&&[iosReview isEqualToString:@"1"]){
-               
+            else if ([Country isEqualToString:@"SPAIN"]&&[Country isEqualToString:@"DENMARK"]&&[Country isEqualToString:@"SWEDEN"]&&[Country isEqualToString:@"ITALY"]&&[Country isEqualToString:@"IRELAND"]&&[Country isEqualToString:@"NORWAY"]&&[Country isEqualToString:@"AUSTRIA"]&&[Country isEqualToString:@"FRANCE"]&&[Country isEqualToString:@"NETHERLANDS"]&&[Country isEqualToString:@"BELGIUM"]&&[iosReview isEqualToString:@"1"]){
+                
                 
                 UIAlertView * alert =[[UIAlertView alloc]initWithTitle:@"" message:@"Coming Soon" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
                 
@@ -288,7 +288,7 @@
                 return;
                 //break;
             }
-           
+            
         }
         case 3:
         {
@@ -328,7 +328,7 @@
                 
             }
             
-            if ([Country isEqualToString:@"UNITED STATES"]||[Country isEqualToString:@"HONG KONG"]) {
+            if ([Country isEqualToString:@"UNITED STATES"]||[Country isEqualToString:@"HONG KONG"]||[Country isEqualToString:@"GHANA"]) {
                 UIAlertView * alert =[[UIAlertView alloc]initWithTitle:@"Crosspay" message:@"Money Transfer currently not available in your location" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
                 
                 [alert show];
@@ -646,7 +646,7 @@
             {
                 
                 
-                urlString = [NSString stringWithFormat:@"http://54.200.111.119:6099/CrosspayCustomer/charitypay?username=%@&devicecode=%@&firstname=%@&mobile=%@&category=%@&usercountry=%@",[[[json valueForKey:@"data"] objectAtIndex:0] valueForKey:@"user_id"],deviceCode,[[[json valueForKey:@"data"] objectAtIndex:0] valueForKey:@"first_name"],[[[json valueForKey:@"data"] objectAtIndex:0] valueForKey:@"mobile"],[[[json valueForKey:@"data"] objectAtIndex:0] valueForKey:@"usercategory"],[[[json valueForKey:@"data"] objectAtIndex:0] valueForKey:@"countryisocode2"]];
+                urlString = [NSString stringWithFormat:@"https://www.crosspaymt.com/charitypay?username=%@&devicecode=%@&firstname=%@&mobile=%@&category=%@&usercountry=%@&isCharityAvailable=%@",[[[json valueForKey:@"data"] objectAtIndex:0] valueForKey:@"user_id"],deviceCode,[[[json valueForKey:@"data"] objectAtIndex:0] valueForKey:@"first_name"],[[[json valueForKey:@"data"] objectAtIndex:0] valueForKey:@"mobile"],[[[json valueForKey:@"data"] objectAtIndex:0] valueForKey:@"usercategory"],[[[json valueForKey:@"data"] objectAtIndex:0] valueForKey:@"countryisocode2"],CharityStatus];
                 
                 NSLog(@"Helo My Url is %@",self->urlString);
                 

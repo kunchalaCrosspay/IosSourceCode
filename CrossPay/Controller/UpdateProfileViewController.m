@@ -195,7 +195,7 @@
                 [Crs_sharedvariable sharedMySingleton].crs_EmailId =  [crs_AboutMeDetails valueForKey:@"email"];
                 
     Country = [crs_AboutMeDetails valueForKey:@"country"];
-                if ([Country isEqualToString:@"UNITED STATES"]||[Country isEqualToString:@"HONG KONG"]) {
+                if ([Country isEqualToString:@"UNITED STATES"]||[Country isEqualToString:@"HONG KONG"]||[Country isEqualToString:@"GHANA"]) {
                     self.crs_UpdateprofileButtonOutlet.hidden = YES;
                     self.crs_AddRecieverButtonOutlet.hidden = YES;
                     

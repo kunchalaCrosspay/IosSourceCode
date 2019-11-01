@@ -1,0 +1,992 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1B6053DB4F426B47C4A91E97990824D3 /* GoogleToolboxForMac-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 37489970A3AFBCBE52B2ED8E048B8200 /* GoogleToolboxForMac-dummy.m */; };
+		2D1BDC63A43460022F1126021DEC6C93 /* Pods-CrossPayTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9CA4206E017CB585E0FCFA952BC283 /* Pods-CrossPayTests-dummy.m */; };
+		2F3446BB52DAE51622A8510CF9A7C0ED /* Pods-CrossPay-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8426F059EC462F93505DDA6650C4CC87 /* Pods-CrossPay-dummy.m */; };
+		3D5A8358B3CE03D143C39C4BF52B34D3 /* GTMNSData+zlib.m in Sources */ = {isa = PBXBuildFile; fileRef = CF5A33354FA1E9FBCDAF28553724B3BB /* GTMNSData+zlib.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		6B02824B166AF4649072CAB930283EEA /* GTMDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = D3850028CAD845EE73FD7CE48BC83D95 /* GTMDefines.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6BF4F297725453F746C6F9F3C8087ED5 /* Pods-CrossPayUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 76095AF984174D086C1E0F59841D43C4 /* Pods-CrossPayUITests-dummy.m */; };
+		AE40968E45EB75088481466E4E7671A3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		B2D2402976901A3C8D0E7A5FCB1EE60A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		BAD95722D21B39FF87075C71BD9D8F7B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		CBC7548501161D689ACF033CA42AA1AB /* GTMNSData+zlib.h in Headers */ = {isa = PBXBuildFile; fileRef = FDFEF21AD5332735A89623F4B10F2019 /* GTMNSData+zlib.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D8E4D2C45FF3E377294E5B75C97D110B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2840BE9E8C8E053041B2115A67DF939D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E1BBB76ADBF2EF4EF2CE5DF6BBC77296;
+			remoteInfo = GoogleToolboxForMac;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		07D781E44F56F1CB851362A780670518 /* Pods-CrossPayUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CrossPayUITests-acknowledgements.plist"; sourceTree = "<group>"; };
+		08ABA0FCDE9B0182DA1B86BC1C8A5293 /* Pods-CrossPay.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CrossPay.release.xcconfig"; sourceTree = "<group>"; };
+		18106FAAFB144042BE5DD520740D8C8E /* GoogleSymbolUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleSymbolUtilities.framework; path = Frameworks/frameworks/GoogleSymbolUtilities.framework; sourceTree = "<group>"; };
+		1C276F612CEE7857EE1EB799D1286146 /* Core.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Core.h; path = Headers/GGLCore/Public/Core.h; sourceTree = "<group>"; };
+		260CD800D94BD52B45996A71804847BE /* Pods-CrossPay-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CrossPay-acknowledgements.plist"; sourceTree = "<group>"; };
+		2780206F01409001938611401F713E46 /* GoogleToolboxForMac.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GoogleToolboxForMac.xcconfig; sourceTree = "<group>"; };
+		2F5D20317DDD16061FCD0E5541AA8A3A /* Core-Module.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Core-Module.h"; path = "Headers/ModuleHeaders/Core-Module.h"; sourceTree = "<group>"; };
+		33167B2C392DCA4A1F1947820BE49416 /* Pods-CrossPayUITests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CrossPayUITests-resources.sh"; sourceTree = "<group>"; };
+		33E62143C86FD8F05F3533E6B3DBA649 /* AppInvite-Module.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "AppInvite-Module.h"; path = "Headers/ModuleHeaders/AppInvite-Module.h"; sourceTree = "<group>"; };
+		37489970A3AFBCBE52B2ED8E048B8200 /* GoogleToolboxForMac-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "GoogleToolboxForMac-dummy.m"; sourceTree = "<group>"; };
+		38B38625450C8AE1E44A49E017A3994C /* GAI.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GAI.h; path = Sources/GAI.h; sourceTree = "<group>"; };
+		3919B1122293435E50F2AACB25AF10CF /* FirebaseNanoPB.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseNanoPB.framework; path = Frameworks/FirebaseNanoPB.framework; sourceTree = "<group>"; };
+		3A466C64AA763E0E58240D0721B358DB /* libPods-CrossPayTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CrossPayTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		41AB3612E23913771213B5AC3B3C106B /* SignIn-Module.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "SignIn-Module.h"; path = "Headers/ModuleHeaders/SignIn-Module.h"; sourceTree = "<group>"; };
+		426B64F91AA5D60BD162C8696878AAAA /* GoogleInterchangeUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleInterchangeUtilities.framework; path = Frameworks/frameworks/GoogleInterchangeUtilities.framework; sourceTree = "<group>"; };
+		4B6B4F303DE3D25A866DC851C9D3EC9F /* GoogleUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleUtilities.framework; path = Frameworks/frameworks/GoogleUtilities.framework; sourceTree = "<group>"; };
+		56BF7EA683153A9A259A6FA4D56A422F /* Pods-CrossPay-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CrossPay-resources.sh"; sourceTree = "<group>"; };
+		57AFADC251A36D678C346B742E02FA2E /* GAIEcommerceProduct.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GAIEcommerceProduct.h; path = Sources/GAIEcommerceProduct.h; sourceTree = "<group>"; };
+		593A6C49011CAA838865C8A2CF06477C /* GAIEcommercePromotion.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GAIEcommercePromotion.h; path = Sources/GAIEcommercePromotion.h; sourceTree = "<group>"; };
+		5CC9ADBD7EA54C5EB78817F5837AFEE7 /* Pods-CrossPay.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CrossPay.debug.xcconfig"; sourceTree = "<group>"; };
+		604F34CC5F763A3BCBE920A0DE08FF9E /* GMRConfiguration.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GMRConfiguration.h; path = Headers/GGLCore/Public/GMRConfiguration.h; sourceTree = "<group>"; };
+		633EDF2BAA7FB437850E967C5E494D28 /* libGoogleToolboxForMac.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libGoogleToolboxForMac.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		668339F53D2D29C116AF6352B976FD84 /* libGGLCore.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libGGLCore.a; path = Libraries/libGGLCore.a; sourceTree = "<group>"; };
+		6B75084CF0243670E0D713A3EB7AACBF /* Pods-CrossPayUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CrossPayUITests-frameworks.sh"; sourceTree = "<group>"; };
+		6BE0F616E055D55819BCA5D67F90EE67 /* libGoogleAnalytics.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libGoogleAnalytics.a; path = Libraries/libGoogleAnalytics.a; sourceTree = "<group>"; };
+		6C9CA4206E017CB585E0FCFA952BC283 /* Pods-CrossPayTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-CrossPayTests-dummy.m"; sourceTree = "<group>"; };
+		6DFBA117A070160F3654D596DC20357D /* AdMob-Module.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "AdMob-Module.h"; path = "Headers/ModuleHeaders/AdMob-Module.h"; sourceTree = "<group>"; };
+		7114C80A590BF37C521FAD2280A84A5F /* GGLContext.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GGLContext.h; path = Headers/GGLCore/Public/GGLContext.h; sourceTree = "<group>"; };
+		71E88C5EC423B050DCA45F8B8FDDD589 /* GoogleToolboxForMac-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GoogleToolboxForMac-prefix.pch"; sourceTree = "<group>"; };
+		7261ACD3E7C1345FCFC9E73B5D9B5449 /* Firebase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Firebase.h; path = Core/Sources/Firebase.h; sourceTree = "<group>"; };
+		76095AF984174D086C1E0F59841D43C4 /* Pods-CrossPayUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-CrossPayUITests-dummy.m"; sourceTree = "<group>"; };
+		77784F79B9DD9636CE0C621BC7885582 /* GAIEcommerceFields.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GAIEcommerceFields.h; path = Sources/GAIEcommerceFields.h; sourceTree = "<group>"; };
+		7B57E82BA8F4C8A8AA0DDE259AD78F85 /* libPods-CrossPay.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CrossPay.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D8A1D81CB3AE96219D4C1C6BE074255 /* Pods-CrossPay-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CrossPay-acknowledgements.markdown"; sourceTree = "<group>"; };
+		8426F059EC462F93505DDA6650C4CC87 /* Pods-CrossPay-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-CrossPay-dummy.m"; sourceTree = "<group>"; };
+		8900E6E2F2402666FBF812B4D4C88649 /* GGLConfiguration.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GGLConfiguration.h; path = Headers/GGLCore/Public/GGLConfiguration.h; sourceTree = "<group>"; };
+		8A0D3A131DE2EDD2F64C3332AF99DF92 /* Pods-CrossPayTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CrossPayTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		8BFCEDCFBB3FDDFD9E4E22285C34AA56 /* GAIFields.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GAIFields.h; path = Sources/GAIFields.h; sourceTree = "<group>"; };
+		8C70F9708E6470C5C5C3E5F07B495052 /* Pods-CrossPayUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CrossPayUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		905D2007B3965AFFE4E0483EB12E41E3 /* Pods-CrossPayTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CrossPayTests-frameworks.sh"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9DF7E783207FAF3620ECB1AB54300688 /* GGLErrorCode.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GGLErrorCode.h; path = Headers/GGLCore/Public/GGLErrorCode.h; sourceTree = "<group>"; };
+		9FAE862BDDFBB402FF44EAE5EAC55584 /* FirebaseInstanceID.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseInstanceID.framework; path = Frameworks/FirebaseInstanceID.framework; sourceTree = "<group>"; };
+		A54F7EF5FE34810A4A5AE40F32780417 /* libGGLAnalytics.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libGGLAnalytics.a; path = Libraries/libGGLAnalytics.a; sourceTree = "<group>"; };
+		A7CD3E903EF03342A3A4EEF6B0675199 /* Pods-CrossPayTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CrossPayTests.release.xcconfig"; sourceTree = "<group>"; };
+		AF3FA4BF4BEF12F01518822824F2B292 /* GAITrackedViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GAITrackedViewController.h; path = Sources/GAITrackedViewController.h; sourceTree = "<group>"; };
+		B1535300152767BFD771CB7C40605020 /* GAILogger.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GAILogger.h; path = Sources/GAILogger.h; sourceTree = "<group>"; };
+		B307DE018EA2C5E5AB5A197A6BCEDBE2 /* CloudMessaging-Module.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "CloudMessaging-Module.h"; path = "Headers/ModuleHeaders/CloudMessaging-Module.h"; sourceTree = "<group>"; };
+		BA547D1A5FBA755F4E39A54F71B1A1AC /* Pods-CrossPayUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CrossPayUITests.release.xcconfig"; sourceTree = "<group>"; };
+		BFEA98EA5397493395970A84E3698A99 /* GAIDictionaryBuilder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GAIDictionaryBuilder.h; path = Sources/GAIDictionaryBuilder.h; sourceTree = "<group>"; };
+		CC36C3A9B2D7D272013AE881F12FEA94 /* GAITracker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GAITracker.h; path = Sources/GAITracker.h; sourceTree = "<group>"; };
+		CD0D23B6B2412C8BBE9AB46FF2A622C4 /* GoogleNetworkingUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleNetworkingUtilities.framework; path = Frameworks/frameworks/GoogleNetworkingUtilities.framework; sourceTree = "<group>"; };
+		CF5A33354FA1E9FBCDAF28553724B3BB /* GTMNSData+zlib.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "GTMNSData+zlib.m"; path = "Foundation/GTMNSData+zlib.m"; sourceTree = "<group>"; };
+		CF692C0197363F33135AFD07C9255005 /* Pods-CrossPayTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CrossPayTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		CF7990F5B6B844AC819E6B2A589EE260 /* Pods-CrossPay-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CrossPay-frameworks.sh"; sourceTree = "<group>"; };
+		CFEF50170D0267992F0541471233238C /* Analytics-Module.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Analytics-Module.h"; path = "Headers/ModuleHeaders/Analytics-Module.h"; sourceTree = "<group>"; };
+		D00122A35C211B03B81A876BA94D055E /* Pods-CrossPayTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CrossPayTests-resources.sh"; sourceTree = "<group>"; };
+		D04411A3E4CEAF60044B7C50895E3E82 /* Pods-CrossPayTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CrossPayTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D3850028CAD845EE73FD7CE48BC83D95 /* GTMDefines.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
+		D3960ED9277579D204313A2F6D356B12 /* FirebaseAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseAnalytics.framework; path = Frameworks/FirebaseAnalytics.framework; sourceTree = "<group>"; };
+		D70197ACED7E65C9EC28ECC8303D1B99 /* FirebaseCoreDiagnostics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseCoreDiagnostics.framework; path = Frameworks/FirebaseCoreDiagnostics.framework; sourceTree = "<group>"; };
+		D7B69C2F451839FC7419554646B2F700 /* FirebaseCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseCore.framework; path = Frameworks/FirebaseCore.framework; sourceTree = "<group>"; };
+		D9EFF40C1B29856E5CB8F9D188A0C629 /* Analytics.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Analytics.h; path = Headers/GGLAnalytics/Public/Analytics.h; sourceTree = "<group>"; };
+		E307F3205311DF4335251BF15A9011F1 /* libPods-CrossPayUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CrossPayUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC18BEC1933C61C6B7EE64182EB3D477 /* GAIEcommerceProductAction.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GAIEcommerceProductAction.h; path = Sources/GAIEcommerceProductAction.h; sourceTree = "<group>"; };
+		FDC0CF59403B69C8CBFBD9C6866998C5 /* Pods-CrossPayUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CrossPayUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		FDFEF21AD5332735A89623F4B10F2019 /* GTMNSData+zlib.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "GTMNSData+zlib.h"; path = "Foundation/GTMNSData+zlib.h"; sourceTree = "<group>"; };
+		FF617BBA01C94B2023A23C344971F3E5 /* GGLContext+Analytics.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "GGLContext+Analytics.h"; path = "Headers/GGLAnalytics/Public/GGLContext+Analytics.h"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6DC02EED429A02B1A5824FE6811B0BBC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8E4D2C45FF3E377294E5B75C97D110B /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		736872D0F6BFBDB3F36ED73405DE4E29 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE40968E45EB75088481466E4E7671A3 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CAA5CF5DB44D5AE3EF0046C2A04C5826 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BAD95722D21B39FF87075C71BD9D8F7B /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D07EFAEF8F4E1072F61066AD60597045 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B2D2402976901A3C8D0E7A5FCB1EE60A /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		09249587DFFCE8071338FA10F3AC92EC /* FirebaseAnalytics */ = {
+			isa = PBXGroup;
+			children = (
+				9585CC3A2FFCD18464A20E62403A28C7 /* Frameworks */,
+			);
+			path = FirebaseAnalytics;
+			sourceTree = "<group>";
+		};
+		0BD2D8EB9EDFDB19D88970F691AF47C2 /* GoogleInterchangeUtilities */ = {
+			isa = PBXGroup;
+			children = (
+				AF17E44750D0FEA62926A37FDBCC8669 /* Frameworks */,
+			);
+			path = GoogleInterchangeUtilities;
+			sourceTree = "<group>";
+		};
+		0CF98D52122448047D206966322F9AA1 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				7261ACD3E7C1345FCFC9E73B5D9B5449 /* Firebase.h */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
+		1F4A4B372B0D3675527CD86B21F31ABC /* Pods-CrossPayTests */ = {
+			isa = PBXGroup;
+			children = (
+				8A0D3A131DE2EDD2F64C3332AF99DF92 /* Pods-CrossPayTests-acknowledgements.markdown */,
+				CF692C0197363F33135AFD07C9255005 /* Pods-CrossPayTests-acknowledgements.plist */,
+				6C9CA4206E017CB585E0FCFA952BC283 /* Pods-CrossPayTests-dummy.m */,
+				905D2007B3965AFFE4E0483EB12E41E3 /* Pods-CrossPayTests-frameworks.sh */,
+				D00122A35C211B03B81A876BA94D055E /* Pods-CrossPayTests-resources.sh */,
+				D04411A3E4CEAF60044B7C50895E3E82 /* Pods-CrossPayTests.debug.xcconfig */,
+				A7CD3E903EF03342A3A4EEF6B0675199 /* Pods-CrossPayTests.release.xcconfig */,
+			);
+			name = "Pods-CrossPayTests";
+			path = "Target Support Files/Pods-CrossPayTests";
+			sourceTree = "<group>";
+		};
+		2683C3B93E89E98905F9ED5796E2FA98 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				6DFBA117A070160F3654D596DC20357D /* AdMob-Module.h */,
+				CFEF50170D0267992F0541471233238C /* Analytics-Module.h */,
+				33E62143C86FD8F05F3533E6B3DBA649 /* AppInvite-Module.h */,
+				B307DE018EA2C5E5AB5A197A6BCEDBE2 /* CloudMessaging-Module.h */,
+				1C276F612CEE7857EE1EB799D1286146 /* Core.h */,
+				2F5D20317DDD16061FCD0E5541AA8A3A /* Core-Module.h */,
+				8900E6E2F2402666FBF812B4D4C88649 /* GGLConfiguration.h */,
+				7114C80A590BF37C521FAD2280A84A5F /* GGLContext.h */,
+				9DF7E783207FAF3620ECB1AB54300688 /* GGLErrorCode.h */,
+				604F34CC5F763A3BCBE920A0DE08FF9E /* GMRConfiguration.h */,
+				41AB3612E23913771213B5AC3B3C106B /* SignIn-Module.h */,
+				9645CC387792C3C9C376A1B658E1D99E /* Frameworks */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
+		319533F199EFBC825077E3FD9E396354 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				18106FAAFB144042BE5DD520740D8C8E /* GoogleSymbolUtilities.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		39C0F44C8305301B4A32D51F4C62165A /* Analytics */ = {
+			isa = PBXGroup;
+			children = (
+				D9EFF40C1B29856E5CB8F9D188A0C629 /* Analytics.h */,
+				FF617BBA01C94B2023A23C344971F3E5 /* GGLContext+Analytics.h */,
+				525327177A201CA4EA222052E8EFD37E /* Frameworks */,
+			);
+			name = Analytics;
+			sourceTree = "<group>";
+		};
+		525327177A201CA4EA222052E8EFD37E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A54F7EF5FE34810A4A5AE40F32780417 /* libGGLAnalytics.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5C4D017AE1DE26EA5587999FEE061520 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CD0D23B6B2412C8BBE9AB46FF2A622C4 /* GoogleNetworkingUtilities.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6B2F34D19F3FA0D7B77EFE5C3E4FD0A8 /* Pods-CrossPay */ = {
+			isa = PBXGroup;
+			children = (
+				7D8A1D81CB3AE96219D4C1C6BE074255 /* Pods-CrossPay-acknowledgements.markdown */,
+				260CD800D94BD52B45996A71804847BE /* Pods-CrossPay-acknowledgements.plist */,
+				8426F059EC462F93505DDA6650C4CC87 /* Pods-CrossPay-dummy.m */,
+				CF7990F5B6B844AC819E6B2A589EE260 /* Pods-CrossPay-frameworks.sh */,
+				56BF7EA683153A9A259A6FA4D56A422F /* Pods-CrossPay-resources.sh */,
+				5CC9ADBD7EA54C5EB78817F5837AFEE7 /* Pods-CrossPay.debug.xcconfig */,
+				08ABA0FCDE9B0182DA1B86BC1C8A5293 /* Pods-CrossPay.release.xcconfig */,
+			);
+			name = "Pods-CrossPay";
+			path = "Target Support Files/Pods-CrossPay";
+			sourceTree = "<group>";
+		};
+		6F7F8DD9A76506C8AD367A37F7374026 /* GoogleAnalytics */ = {
+			isa = PBXGroup;
+			children = (
+				38B38625450C8AE1E44A49E017A3994C /* GAI.h */,
+				BFEA98EA5397493395970A84E3698A99 /* GAIDictionaryBuilder.h */,
+				77784F79B9DD9636CE0C621BC7885582 /* GAIEcommerceFields.h */,
+				57AFADC251A36D678C346B742E02FA2E /* GAIEcommerceProduct.h */,
+				EC18BEC1933C61C6B7EE64182EB3D477 /* GAIEcommerceProductAction.h */,
+				593A6C49011CAA838865C8A2CF06477C /* GAIEcommercePromotion.h */,
+				8BFCEDCFBB3FDDFD9E4E22285C34AA56 /* GAIFields.h */,
+				B1535300152767BFD771CB7C40605020 /* GAILogger.h */,
+				AF3FA4BF4BEF12F01518822824F2B292 /* GAITrackedViewController.h */,
+				CC36C3A9B2D7D272013AE881F12FEA94 /* GAITracker.h */,
+				F5E9438AAD8ABB887B4483F05BDF53CC /* Frameworks */,
+			);
+			path = GoogleAnalytics;
+			sourceTree = "<group>";
+		};
+		75AC88C0B9EEA33FF12F6287BE14B172 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				2780206F01409001938611401F713E46 /* GoogleToolboxForMac.xcconfig */,
+				37489970A3AFBCBE52B2ED8E048B8200 /* GoogleToolboxForMac-dummy.m */,
+				71E88C5EC423B050DCA45F8B8FDDD589 /* GoogleToolboxForMac-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/GoogleToolboxForMac";
+			sourceTree = "<group>";
+		};
+		789E44E9E390C8651F9A413D07CF4D2C /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				0CF98D52122448047D206966322F9AA1 /* Core */,
+			);
+			path = Firebase;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				C05B4F8438E8D1B0BC731CCDC7C43F0C /* Pods */,
+				CB912AD25F92A6F277334633979A8797 /* Products */,
+				D33D6C0499C9A32B0623B5E220A61903 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		878110F8C1EF720CC24F183C121BA300 /* Pods-CrossPayUITests */ = {
+			isa = PBXGroup;
+			children = (
+				FDC0CF59403B69C8CBFBD9C6866998C5 /* Pods-CrossPayUITests-acknowledgements.markdown */,
+				07D781E44F56F1CB851362A780670518 /* Pods-CrossPayUITests-acknowledgements.plist */,
+				76095AF984174D086C1E0F59841D43C4 /* Pods-CrossPayUITests-dummy.m */,
+				6B75084CF0243670E0D713A3EB7AACBF /* Pods-CrossPayUITests-frameworks.sh */,
+				33167B2C392DCA4A1F1947820BE49416 /* Pods-CrossPayUITests-resources.sh */,
+				8C70F9708E6470C5C5C3E5F07B495052 /* Pods-CrossPayUITests.debug.xcconfig */,
+				BA547D1A5FBA755F4E39A54F71B1A1AC /* Pods-CrossPayUITests.release.xcconfig */,
+			);
+			name = "Pods-CrossPayUITests";
+			path = "Target Support Files/Pods-CrossPayUITests";
+			sourceTree = "<group>";
+		};
+		9585CC3A2FFCD18464A20E62403A28C7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D3960ED9277579D204313A2F6D356B12 /* FirebaseAnalytics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9645CC387792C3C9C376A1B658E1D99E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				668339F53D2D29C116AF6352B976FD84 /* libGGLCore.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9AE6597395CB29F333ADDD6B3C5E1246 /* Defines */ = {
+			isa = PBXGroup;
+			children = (
+				D3850028CAD845EE73FD7CE48BC83D95 /* GTMDefines.h */,
+			);
+			name = Defines;
+			sourceTree = "<group>";
+		};
+		AF17E44750D0FEA62926A37FDBCC8669 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				426B64F91AA5D60BD162C8696878AAAA /* GoogleInterchangeUtilities.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B41F1E0F0642E33B90C08F99EDF2B418 /* GoogleToolboxForMac */ = {
+			isa = PBXGroup;
+			children = (
+				9AE6597395CB29F333ADDD6B3C5E1246 /* Defines */,
+				DD2D523AAF8F9C873E17BB8415279FB5 /* NSData+zlib */,
+				75AC88C0B9EEA33FF12F6287BE14B172 /* Support Files */,
+			);
+			path = GoogleToolboxForMac;
+			sourceTree = "<group>";
+		};
+		BAEE6EDE552F969A0CDA0BA357648485 /* Google */ = {
+			isa = PBXGroup;
+			children = (
+				39C0F44C8305301B4A32D51F4C62165A /* Analytics */,
+				2683C3B93E89E98905F9ED5796E2FA98 /* Core */,
+			);
+			path = Google;
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D35AF013A5F0BAD4F32504907A52519E /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BE6A16D768F8D696F5CE846682BACDD0 /* GoogleNetworkingUtilities */ = {
+			isa = PBXGroup;
+			children = (
+				5C4D017AE1DE26EA5587999FEE061520 /* Frameworks */,
+			);
+			path = GoogleNetworkingUtilities;
+			sourceTree = "<group>";
+		};
+		C05B4F8438E8D1B0BC731CCDC7C43F0C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				789E44E9E390C8651F9A413D07CF4D2C /* Firebase */,
+				09249587DFFCE8071338FA10F3AC92EC /* FirebaseAnalytics */,
+				E718B870F5BDACF9D7F2B3C2206DB44A /* FirebaseCore */,
+				D863A4C006469B32645AA6F191BBA00D /* FirebaseInstanceID */,
+				BAEE6EDE552F969A0CDA0BA357648485 /* Google */,
+				6F7F8DD9A76506C8AD367A37F7374026 /* GoogleAnalytics */,
+				0BD2D8EB9EDFDB19D88970F691AF47C2 /* GoogleInterchangeUtilities */,
+				BE6A16D768F8D696F5CE846682BACDD0 /* GoogleNetworkingUtilities */,
+				F30EC4A77222948A2E21D7BBEAE5D308 /* GoogleSymbolUtilities */,
+				B41F1E0F0642E33B90C08F99EDF2B418 /* GoogleToolboxForMac */,
+				D9DF5DE65103C0212AE0B02921BA517E /* GoogleUtilities */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		C99F3E53BA34E4BF9097C7429CBFF7FE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9FAE862BDDFBB402FF44EAE5EAC55584 /* FirebaseInstanceID.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CB912AD25F92A6F277334633979A8797 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				633EDF2BAA7FB437850E967C5E494D28 /* libGoogleToolboxForMac.a */,
+				7B57E82BA8F4C8A8AA0DDE259AD78F85 /* libPods-CrossPay.a */,
+				3A466C64AA763E0E58240D0721B358DB /* libPods-CrossPayTests.a */,
+				E307F3205311DF4335251BF15A9011F1 /* libPods-CrossPayUITests.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D33D6C0499C9A32B0623B5E220A61903 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				6B2F34D19F3FA0D7B77EFE5C3E4FD0A8 /* Pods-CrossPay */,
+				1F4A4B372B0D3675527CD86B21F31ABC /* Pods-CrossPayTests */,
+				878110F8C1EF720CC24F183C121BA300 /* Pods-CrossPayUITests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		D35AF013A5F0BAD4F32504907A52519E /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		D863A4C006469B32645AA6F191BBA00D /* FirebaseInstanceID */ = {
+			isa = PBXGroup;
+			children = (
+				C99F3E53BA34E4BF9097C7429CBFF7FE /* Frameworks */,
+			);
+			path = FirebaseInstanceID;
+			sourceTree = "<group>";
+		};
+		D9DF5DE65103C0212AE0B02921BA517E /* GoogleUtilities */ = {
+			isa = PBXGroup;
+			children = (
+				EF12CB670E5C77C1600BDEA9363D40EE /* Frameworks */,
+			);
+			path = GoogleUtilities;
+			sourceTree = "<group>";
+		};
+		DD2D523AAF8F9C873E17BB8415279FB5 /* NSData+zlib */ = {
+			isa = PBXGroup;
+			children = (
+				FDFEF21AD5332735A89623F4B10F2019 /* GTMNSData+zlib.h */,
+				CF5A33354FA1E9FBCDAF28553724B3BB /* GTMNSData+zlib.m */,
+			);
+			name = "NSData+zlib";
+			sourceTree = "<group>";
+		};
+		E718B870F5BDACF9D7F2B3C2206DB44A /* FirebaseCore */ = {
+			isa = PBXGroup;
+			children = (
+				F440F1770D61986385373C0606518008 /* Frameworks */,
+			);
+			path = FirebaseCore;
+			sourceTree = "<group>";
+		};
+		EF12CB670E5C77C1600BDEA9363D40EE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4B6B4F303DE3D25A866DC851C9D3EC9F /* GoogleUtilities.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F30EC4A77222948A2E21D7BBEAE5D308 /* GoogleSymbolUtilities */ = {
+			isa = PBXGroup;
+			children = (
+				319533F199EFBC825077E3FD9E396354 /* Frameworks */,
+			);
+			path = GoogleSymbolUtilities;
+			sourceTree = "<group>";
+		};
+		F440F1770D61986385373C0606518008 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D7B69C2F451839FC7419554646B2F700 /* FirebaseCore.framework */,
+				D70197ACED7E65C9EC28ECC8303D1B99 /* FirebaseCoreDiagnostics.framework */,
+				3919B1122293435E50F2AACB25AF10CF /* FirebaseNanoPB.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F5E9438AAD8ABB887B4483F05BDF53CC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6BE0F616E055D55819BCA5D67F90EE67 /* libGoogleAnalytics.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		34476B01833D8F46D0CEB0D1A2BDEECD /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6B02824B166AF4649072CAB930283EEA /* GTMDefines.h in Headers */,
+				CBC7548501161D689ACF033CA42AA1AB /* GTMNSData+zlib.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		536717D627BAA93BA689BD2F1D5E739A /* Pods-CrossPayTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A551B8DF7490C44AD775C208DA546B80 /* Build configuration list for PBXNativeTarget "Pods-CrossPayTests" */;
+			buildPhases = (
+				ACA28D2E56509D1B31E0F3F79060CA93 /* Sources */,
+				CAA5CF5DB44D5AE3EF0046C2A04C5826 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-CrossPayTests";
+			productName = "Pods-CrossPayTests";
+			productReference = 3A466C64AA763E0E58240D0721B358DB /* libPods-CrossPayTests.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		62E42FB3D61886538F929CD14D55B4A6 /* Pods-CrossPayUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FF33025B4F66634A4EC9C4A8655D021A /* Build configuration list for PBXNativeTarget "Pods-CrossPayUITests" */;
+			buildPhases = (
+				AFE82BDA42BE737D9B310B0F467F6AC6 /* Sources */,
+				6DC02EED429A02B1A5824FE6811B0BBC /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-CrossPayUITests";
+			productName = "Pods-CrossPayUITests";
+			productReference = E307F3205311DF4335251BF15A9011F1 /* libPods-CrossPayUITests.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		A648D8B54B3E312B83080F16F7206833 /* Pods-CrossPay */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 254A6F07DC3801CC5C4B23819C2FF774 /* Build configuration list for PBXNativeTarget "Pods-CrossPay" */;
+			buildPhases = (
+				0B4C3FA772A01CD9B76531BA12D1AAF3 /* Sources */,
+				D07EFAEF8F4E1072F61066AD60597045 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7B5DA3432D94299F5376A19220495D0D /* PBXTargetDependency */,
+			);
+			name = "Pods-CrossPay";
+			productName = "Pods-CrossPay";
+			productReference = 7B57E82BA8F4C8A8AA0DDE259AD78F85 /* libPods-CrossPay.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		E1BBB76ADBF2EF4EF2CE5DF6BBC77296 /* GoogleToolboxForMac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C8E910B89548204C9E82F8F7CCB1460E /* Build configuration list for PBXNativeTarget "GoogleToolboxForMac" */;
+			buildPhases = (
+				E039C8832DF36C6AA9B398412DBAA4B5 /* Sources */,
+				736872D0F6BFBDB3F36ED73405DE4E29 /* Frameworks */,
+				34476B01833D8F46D0CEB0D1A2BDEECD /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GoogleToolboxForMac;
+			productName = GoogleToolboxForMac;
+			productReference = 633EDF2BAA7FB437850E967C5E494D28 /* libGoogleToolboxForMac.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 1010;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = CB912AD25F92A6F277334633979A8797 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E1BBB76ADBF2EF4EF2CE5DF6BBC77296 /* GoogleToolboxForMac */,
+				A648D8B54B3E312B83080F16F7206833 /* Pods-CrossPay */,
+				536717D627BAA93BA689BD2F1D5E739A /* Pods-CrossPayTests */,
+				62E42FB3D61886538F929CD14D55B4A6 /* Pods-CrossPayUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0B4C3FA772A01CD9B76531BA12D1AAF3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2F3446BB52DAE51622A8510CF9A7C0ED /* Pods-CrossPay-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ACA28D2E56509D1B31E0F3F79060CA93 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2D1BDC63A43460022F1126021DEC6C93 /* Pods-CrossPayTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AFE82BDA42BE737D9B310B0F467F6AC6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6BF4F297725453F746C6F9F3C8087ED5 /* Pods-CrossPayUITests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E039C8832DF36C6AA9B398412DBAA4B5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B6053DB4F426B47C4A91E97990824D3 /* GoogleToolboxForMac-dummy.m in Sources */,
+				3D5A8358B3CE03D143C39C4BF52B34D3 /* GTMNSData+zlib.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7B5DA3432D94299F5376A19220495D0D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = GoogleToolboxForMac;
+			target = E1BBB76ADBF2EF4EF2CE5DF6BBC77296 /* GoogleToolboxForMac */;
+			targetProxy = 2840BE9E8C8E053041B2115A67DF939D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		14BDE2EDA541E5ABA5FAC19219579290 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 08ABA0FCDE9B0182DA1B86BC1C8A5293 /* Pods-CrossPay.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3507C48DC787BBFB598EB4B2FB340250 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8C70F9708E6470C5C5C3E5F07B495052 /* Pods-CrossPayUITests.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4388C2B246E3A9BF2EFF58C7B0B0F17B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D04411A3E4CEAF60044B7C50895E3E82 /* Pods-CrossPayTests.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		64C9EFECE4A17B8C29B0692FD7FB7C17 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2780206F01409001938611401F713E46 /* GoogleToolboxForMac.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/GoogleToolboxForMac/GoogleToolboxForMac-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6D2F9C6D6437E28F9EA1BF4FC6856642 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A7CD3E903EF03342A3A4EEF6B0675199 /* Pods-CrossPayTests.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AA86B8B15F8996688783E26BC542B91D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5CC9ADBD7EA54C5EB78817F5837AFEE7 /* Pods-CrossPay.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B254DAA6CF0CE39F4A3D11B90A7E059A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		E4B68EE12B21C47CB798D9B1ECA6D7A7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		F363A328A126A2A21385BD19FB27A60F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2780206F01409001938611401F713E46 /* GoogleToolboxForMac.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/GoogleToolboxForMac/GoogleToolboxForMac-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FBC4DFD1B7F92E284046E6B60BE65E6A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BA547D1A5FBA755F4E39A54F71B1A1AC /* Pods-CrossPayUITests.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		254A6F07DC3801CC5C4B23819C2FF774 /* Build configuration list for PBXNativeTarget "Pods-CrossPay" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA86B8B15F8996688783E26BC542B91D /* Debug */,
+				14BDE2EDA541E5ABA5FAC19219579290 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E4B68EE12B21C47CB798D9B1ECA6D7A7 /* Debug */,
+				B254DAA6CF0CE39F4A3D11B90A7E059A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A551B8DF7490C44AD775C208DA546B80 /* Build configuration list for PBXNativeTarget "Pods-CrossPayTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4388C2B246E3A9BF2EFF58C7B0B0F17B /* Debug */,
+				6D2F9C6D6437E28F9EA1BF4FC6856642 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C8E910B89548204C9E82F8F7CCB1460E /* Build configuration list for PBXNativeTarget "GoogleToolboxForMac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F363A328A126A2A21385BD19FB27A60F /* Debug */,
+				64C9EFECE4A17B8C29B0692FD7FB7C17 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FF33025B4F66634A4EC9C4A8655D021A /* Build configuration list for PBXNativeTarget "Pods-CrossPayUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3507C48DC787BBFB598EB4B2FB340250 /* Debug */,
+				FBC4DFD1B7F92E284046E6B60BE65E6A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}
