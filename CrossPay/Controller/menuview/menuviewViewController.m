@@ -52,6 +52,7 @@
     NSString * urlString;
     NSString * deviceCode;
     NSString * CharityStatus;
+    NSString * TheName;
 }
 
 - (void)viewDidLoad {
@@ -645,8 +646,11 @@
                 
             {
                 
+                self->TheName = [[[json valueForKey:@"data"] objectAtIndex:0] valueForKey:@"first_name"];
+                NSString *TrimmedFirstname = [self->TheName stringByReplacingOccurrencesOfString:@" " withString:@"$"];
+                NSLog(@"My Trimmed First Name is %@",TrimmedFirstname);
                 
-                urlString = [NSString stringWithFormat:@"https://www.crosspaymt.com/charitypay?username=%@&devicecode=%@&firstname=%@&mobile=%@&category=%@&usercountry=%@&isCharityAvailable=%@",[[[json valueForKey:@"data"] objectAtIndex:0] valueForKey:@"user_id"],deviceCode,[[[json valueForKey:@"data"] objectAtIndex:0] valueForKey:@"first_name"],[[[json valueForKey:@"data"] objectAtIndex:0] valueForKey:@"mobile"],[[[json valueForKey:@"data"] objectAtIndex:0] valueForKey:@"usercategory"],[[[json valueForKey:@"data"] objectAtIndex:0] valueForKey:@"countryisocode2"],CharityStatus];
+                self->urlString = [NSString stringWithFormat:@"https://www.crosspaymt.com/charitypay?username=%@&devicecode=%@&firstname=%@&mobile=%@&category=%@&usercountry=%@&isCharityAvailable=%@",[[[json valueForKey:@"data"] objectAtIndex:0] valueForKey:@"user_id"],self->deviceCode,TrimmedFirstname,[[[json valueForKey:@"data"] objectAtIndex:0] valueForKey:@"mobile"],[[[json valueForKey:@"data"] objectAtIndex:0] valueForKey:@"usercategory"],[[[json valueForKey:@"data"] objectAtIndex:0] valueForKey:@"countryisocode2"],self->CharityStatus];
                 
                 NSLog(@"Helo My Url is %@",self->urlString);
                 
@@ -655,13 +659,13 @@
                
                 
                 
-                FullName = [crs_ProfileNameArray valueForKey:@"name"];
-                self.crs_UserName.text = FullName;
-              MiddleName =  [crs_ProfileNameArray valueForKey:@"email"];
-                self.crs_UserEmailId.text = MiddleName;
-                Country = [ crs_ProfileNameArray valueForKey:@"country"];
+                self->FullName = [crs_ProfileNameArray valueForKey:@"name"];
+                self.crs_UserName.text = self->FullName;
+                self->MiddleName =  [crs_ProfileNameArray valueForKey:@"email"];
+                self.crs_UserEmailId.text = self->MiddleName;
+                self->Country = [ crs_ProfileNameArray valueForKey:@"country"];
                 
-                iosReview = [NSString stringWithFormat:@"%@", [ crs_ProfileNameArray valueForKey:@"IOSREVIEW"]];
+                self->iosReview = [NSString stringWithFormat:@"%@", [ crs_ProfileNameArray valueForKey:@"IOSREVIEW"]];
                 NSLog(@"MY Country%@",Country);
             }
             

@@ -13,13 +13,13 @@
 
 //Developmentcx
 
-#define Crosspay_Serverpath @"http://54.200.111.119:6099/Crosspaydevelopment/"
+//#define Crosspay_Serverpath @"http://54.200.111.119:6099/Crosspaydevelopment/"
 //#define Crosspay_Serverpath @"http://54.244.96.209:8080/Crosspaydev/"
 //#define Crosspay_Serverpath @"https://ws.crosspaymt.com/Crosspayproduction/"
 
 
 // Production
-//#define Crosspay_Serverpath @"https://ws.crosspaymt.com/Crosspayprod/"
+#define Crosspay_Serverpath @"https://ws.crosspaymt.com/Crosspayprod/"
 
 #define Crosspay_register          (Crosspay_Serverpath @"register")
 

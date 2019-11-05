@@ -167,7 +167,7 @@ MyUser =[[Crs_sharedvariable sharedMySingleton ].crs_UserDetails valueForKey:@"u
             NSLog(@"%@", json );
             NSLog(@"%@", [json valueForKey:@"message"]);
             //message = [json valueForKey:@"message"];
-            crs_PassingToWebview = json;
+            self->crs_PassingToWebview = json;
             if ([[json valueForKey:@"status"]isEqualToString:@"200"])
                 
                 
@@ -186,23 +186,30 @@ MyUser =[[Crs_sharedvariable sharedMySingleton ].crs_UserDetails valueForKey:@"u
                 
                 
                 
-                CHarityCountry = [ crs_ProfileNameArray valueForKey:@"country"];
+                self->CHarityCountry = [ crs_ProfileNameArray valueForKey:@"country"];
                
-                iosReview = [NSString stringWithFormat:@"%@", [ crs_ProfileNameArray valueForKey:@"IOSREVIEW"]];
+                self->iosReview = [NSString stringWithFormat:@"%@", [ crs_ProfileNameArray valueForKey:@"IOSREVIEW"]];
                 
                 
+                self->firstName = [[[json valueForKey:@"data"] objectAtIndex:0] valueForKey:@"first_name"];
+                NSString *TrimmedFirstname = [self->firstName stringByReplacingOccurrencesOfString:@" " withString:@"$"];
+                NSLog(@"My Trimmed First Name is %@",TrimmedFirstname);
                 
-                UrlSTring = [NSString stringWithFormat:@"https://www.crosspaymt.com/charitypay?username=%@&devicecode=%@&firstname=%@&mobile=%@&category=%@&usercountry=%@&isCharityAvailable=%@",[[[json valueForKey:@"data"] objectAtIndex:0] valueForKey:@"user_id"],devieCode,[[[json valueForKey:@"data"] objectAtIndex:0] valueForKey:@"first_name"],[[[json valueForKey:@"data"] objectAtIndex:0] valueForKey:@"mobile"],[[[json valueForKey:@"data"] objectAtIndex:0] valueForKey:@"usercategory"],[[[json valueForKey:@"data"] objectAtIndex:0] valueForKey:@"countryisocode2"],CharityStatus];
+                
+                NSString * Development = @"http://54.200.111.119:6099/Crosspaydevelopment/charitypay?" ;
+                NSString * production = @"https://www.crosspaymt.com/charitypay?";
+                
+                self->UrlSTring = [NSString stringWithFormat:@"http://54.200.111.119:6099/CrosspayCustomer/charitypay?username=%@&devicecode=%@&firstname=%@&mobile=%@&category=%@&usercountry=%@&isCharityAvailable=%@",[[[json valueForKey:@"data"] objectAtIndex:0] valueForKey:@"user_id"],self->devieCode,TrimmedFirstname,[[[json valueForKey:@"data"] objectAtIndex:0] valueForKey:@"mobile"],[[[json valueForKey:@"data"] objectAtIndex:0] valueForKey:@"usercategory"],[[[json valueForKey:@"data"] objectAtIndex:0] valueForKey:@"countryisocode2"],self->CharityStatus];
                 
                 
-                CountryCode = [[[json valueForKey:@"data"] objectAtIndex:0] valueForKey:@"countryisocode2"];
-                NSLog(@"my Country Code is %@",CountryCode);
+                self->CountryCode = [[[json valueForKey:@"data"] objectAtIndex:0] valueForKey:@"countryisocode2"];
+                NSLog(@"my Country Code is %@",self->CountryCode);
                 NSLog(@"Helo My Url is %@",self->UrlSTring);
                 
                 
 
                 
-                if ([CHarityCountry isEqualToString:@"UNITED KINGDOM"]) {
+                if ([self->CHarityCountry isEqualToString:@"UNITED KINGDOM"]) {
                     
                 }
                 else{
@@ -310,11 +317,8 @@ MyUser =[[Crs_sharedvariable sharedMySingleton ].crs_UserDetails valueForKey:@"u
             
             
             if ([Status isEqualToString:@"200"]) {
-                NSURL *url = [NSURL URLWithString:UrlSTring];
-                
-                if (![[UIApplication sharedApplication] openURL:url]) {
-                    NSLog(@"%@%@",@"Failed to open url:",[url description]);
-                }
+                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:self->UrlSTring]];
+               
             } else {
                 
                 
@@ -323,24 +327,24 @@ MyUser =[[Crs_sharedvariable sharedMySingleton ].crs_UserDetails valueForKey:@"u
                 [alert show];
             }
             
-            CharityNameArray = [NSMutableArray new];
-            CharityNameArray = [json valueForKey:@"data"];
+            self->CharityNameArray = [NSMutableArray new];
+            self->CharityNameArray = [json valueForKey:@"data"];
             
             NSSortDescriptor *descriptor = [[NSSortDescriptor alloc] initWithKey:@"OrganisationName" ascending:YES];
             
             NSArray *sortDescriptors = [NSArray arrayWithObject:descriptor];
             
             // here you will get sorted array in 'sortedArray'
-            CharityNameArray= [[CharityNameArray sortedArrayUsingDescriptors:sortDescriptors] mutableCopy];
+            self->CharityNameArray= [[self->CharityNameArray sortedArrayUsingDescriptors:sortDescriptors] mutableCopy];
             
             
-            CharityNameArray = [json valueForKey:@"data"];
+            self->CharityNameArray = [json valueForKey:@"data"];
             
             
             
            
             
-            if (CharityNameArray.count == 0) {
+            if (self->CharityNameArray.count == 0) {
                
               
             }
